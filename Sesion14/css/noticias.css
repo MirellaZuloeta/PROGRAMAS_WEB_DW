@@ -1,0 +1,23 @@
+.tamaño{
+    height: 60px;
+    width: 300px;
+    }
+    #foto{
+        background-color: rgb(248, 195, 195);
+        float: right;
+    }
+    #titulo{
+        background-color: rgb(243, 36, 36);
+       color: white;
+        text-align: center;
+    }
+    #noticia{
+       
+    font-size: 1.3vw;
+    }
+    #caja{
+        background-color: rgb(255, 16, 16);
+        color: white;
+     float: right;
+     font-size: medium;
+    }
