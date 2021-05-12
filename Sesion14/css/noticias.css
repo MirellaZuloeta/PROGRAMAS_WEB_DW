@@ -1,23 +1,48 @@
-.tamaño{
-    height: 60px;
-    width: 300px;
-    }
-    #foto{
-        background-color: rgb(248, 195, 195);
+#titulo{
+    background-color: rgb(243, 36, 36);
+   color: white;
+    text-align: center;
+    padding: 18px;
+    margin: -10px;
+}
+#navegar{
+    background-color: rgb(121, 116, 116);
+    color: white;
+    margin: -8px;
+    font-family: helvetica;
+    padding: 3px;
+}
+#subtitulo{
+    color: red;
+    font-family: helvetica;
+}
+   img{
+      
         float: right;
+        width: 350px;
+        height: 190px;
+        
     }
-    #titulo{
-        background-color: rgb(243, 36, 36);
-       color: white;
-        text-align: center;
+    
+    #enunciado{
+        font-family: helvetica;
     }
     #noticia{
        
     font-size: 1.3vw;
+    font-family: helvetica;
+    color: rgb(133, 133, 133);
+    margin: 0px;    
     }
+    
     #caja{
-        background-color: rgb(255, 16, 16);
-        color: white;
-     float: right;
-     font-size: medium;
+    background-color: rgb(255, 16, 16);
+    color: white;
+    float: right;
+    padding: 2px;
+    font-family: times New Roman;
+    margin: -2px;
+    width: 210px;
+    text-align: center;
     }
+  

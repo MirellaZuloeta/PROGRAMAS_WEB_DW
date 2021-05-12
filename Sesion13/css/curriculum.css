@@ -1,0 +1,43 @@
+h1{
+color: rgb(255, 255, 255);
+text-align: center;
+/* border: 1px solid;
+border-color: white; */
+font-family: 'Segoe UI';
+background-color: rgb(255, 213, 205);
+font-size: 40px;
+padding: 10px;
+margin: -10px;
+width: 100%;
+}
+nav{
+    background-color: black;
+
+}
+a{
+    color: white;
+    
+}
+#navegar{
+   
+    width: 100%;
+    padding: -2px;
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+#nombre{
+    padding: 0px;
+margin: 0px;
+    background-color: rgb(255, 213, 205);
+font-family: Arial;
+color: white;
+}
+thead tr th{
+    color: rgb(255, 0, 106);
+}
+#tabla1,#tabla2,#tabla3{
+    padding: 20px;
+    background-color:  rgb(255, 213, 205);
+}
