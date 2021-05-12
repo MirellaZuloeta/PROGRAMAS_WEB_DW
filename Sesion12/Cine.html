@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuesta cinematográfica</title>
     <link rel="icon" href="img/favicon.ico">
+    <title>Encuesta cinematográfica</title>
+    <div>
+        <img src="img/trofeo.jpg " alt="trofeo"  width="90" height="90"  style="float: right;">
+        <img src="img/trofeo.jpg " alt="trofeo"  width="90" height="90"  style="float: left;">
+    </div><br><br>
+  
 </head>
-<body style="background-color: #d3eef3;">
+<body style="background-color: #fff5db;">
    <div id="Contenedor">
-<h2 style="color: rgb(126, 50, 212); text-align: center;">Encuesta de Cine: Nominadas al Oscar 2018</h2>
+<h2 style="color: rgb(114, 110, 110); text-align: center;">Encuesta de Cine: Nominadas al Oscar 2018</h2>
 <form id="formulario1" name="formulario1" method="POST" action="data.php">
-<fieldset id="datos_personales">
+<fieldset id="datos_personales" style="background-color: rgb(247, 248, 233);">
 <legend>Datos Personales</legend>
 <label for="nombre">Nombre: &nbsp; </label> 
 <input type="text" name="nombre" id="nombre"> <br><br>
@@ -29,7 +34,7 @@
 </fieldset> <br>
 
 
-<fieldset id="mejor_pelicula">
+<fieldset id="mejor_pelicula" style="background-color:rgb(247, 248, 233) ;">
 <legend>Mejor Pelicula</legend>
 <input type="radio" name="pelicula" value="11"> Call me by your name <br>
 <input type="radio" name="pelicula" value="22">Dunkerque <br>
@@ -37,7 +42,7 @@
 </fieldset>
 <br>
 
-<fieldset id="seleccion_peliculas">
+<fieldset id="seleccion_peliculas" style="background-color:rgb(247, 248, 233) ;">
 <legend>Selecciona las películas que no hayas visto</legend>
 <input type="checkbox" name="peli01" checked>Me before you<br>
 <input type="checkbox" name="peli02" >Titanic <br>
@@ -47,7 +52,7 @@
 
 </fieldset><br>
 
-<fieldset id="grupo_argumento">
+<fieldset id="grupo_argumento" >
     <legend>Argumento de tu película preferida</legend>
 <textarea name="argumento" name="argumento" cols="50" rows="14"></textarea>
 </fieldset><br>
