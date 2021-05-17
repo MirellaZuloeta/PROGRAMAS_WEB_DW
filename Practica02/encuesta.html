@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/encuesta.css">
+    <link rel="icon" href="/Practica02/imagenes/favicon.ico">
+    <title>Encuesta</title>
+</head>
+<body>
+    <main class="grid">
+      <header>
+        <a href="sesion.html" id="logeo">Iniciar Sesion</a>
+        <img src="/Practica02/imagenes/logo.png" alt="logoPagina" id="logo">
+        <h1> ZULOETA LOPEZ MIRELLA</h1>
+        <H2 id="subtitulo"> Mi web Personal</H3>
+      </header>
+      
+      <nav>
+        <a rel="stylesheet" href="/Practica02/index.html"><input type="submit" value="Inicio" id="navegador"></a>
+        <a rel="stylesheet" href="/Practica02/curriculum.html"><input type="submit" value="Curriculum" id="navegador"></a>
+        <a rel="stylesheet" href="/Practica02/proyecto.html"><input type="submit" value="Proyectos" id="navegador"></a>
+        <a rel="stylesheet" href="/Practica02/contacto.html"><input type="submit" value="Contactos" id="navegador"></a>   
+      
+    </nav>
+
+      <section>
+      
+        <div id="Contenedor">
+            <img src="/Practica02/imagenes/trofeo.jpg" alt="trofeo"  id="iconoA">
+            <img src="/Practica02/imagenes/trofeo.jpg " alt="trofeo" id="iconoB"> <br><br>
+            <h2 style="color: rgb(114, 110, 110); text-align: center;">Encuesta de Cine: Nominadas al Oscar 2018</h2>
+            <form id="formulario1" name="formulario1" method="POST" action="data.php">
+            
+            <fieldset id="datos_personales" style="background-color: rgb(247, 248, 233);">
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre: &nbsp; </label> 
+                <input type="text" name="nombre" id="nombre"> <br><br>
+                <label for="nombre">Apellido:&nbsp; </label> 
+                <input type="text" name="apellido" id="apellido"> <br><br>
+              
+                <label for="edad">Edad:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <input type="text" name="edad" id="edad" size="2" maxlength="2"> <br><br>
+                <label for="sexo">Sexo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <select name="genero" >
+                <option>Masculino</option>
+                <option>Femenino</option>
+                    </select>
+            </fieldset> <br>
+            
+            
+            <fieldset id="mejor_pelicula" style="background-color:rgb(247, 248, 233) ;">
+            <legend>Mejor Pelicula</legend>
+            <input type="radio" name="pelicula" value="11"> Call me by your name <br>
+            <input type="radio" name="pelicula" value="22">Dunkerque <br>
+            <input type="radio" name="pelicula" value="33">Déjame salir <br>
+            </fieldset>
+            <br>
+            
+            <fieldset id="seleccion_peliculas" style="background-color:rgb(247, 248, 233) ;">
+            <legend>Selecciona las películas que no hayas visto</legend>
+            <input type="checkbox" name="peli01" checked>Me before you<br>
+            <input type="checkbox" name="peli02" >Titanic <br>
+            <input type="checkbox" name="peli03" checked>Startup <br>
+   
+            
+            </fieldset><br>
+          
+            <input type="reset" value="Borrar Formulario">
+            <input type="submit" value="Enviar">
+            
+            
+            </form>
+               </div>
+
+      </section>
+
+      <aside>
+        <div id="cuadro01">
+            <h3>Menú</h3>
+            <ul>
+                <li><a href="/Practica02/index.html">Inicio</a></li>
+                <li><a href="/Practica02/curriculum.html">Curriculum</a></li>
+                <li><a href="/Practica02/proyecto.html">Proyectos</a></li>
+                <li><a href="/Practica02/contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div id="cuadro02">
+            <h3>Enlaces de Interés</h3>
+            <ul>
+                <li> <a href="curriculummejor.html">P1: Curriculum 2.0</a></li>
+                <li> <a href="tabla.html">P2: Tabla Factura</a></li>
+                <li> <a href="encuesta.html">P3: Encuesta</a></li>
+                <li> <a href="registro.html" >P4: Registro User</a></li>
+                <li> <a href="noticia.html">P5: Noticia</a></li>
+                <li> <a href="veterinaria.html" target="_blank">P6: Veterinaria</a></li>
+            </ul>
+        </div>
+      </aside>
+      <aside id="aside2">
+
+        <img src="/Practica02/imagenes/user.png" alt="" id="icono4">
+     
+    <div id="enlaces">
+        <h3>Información de contacto</h3>
+        <ul>
+            <li><strong>Ciudad:</strong>Chiclayo</li>
+            <li><strong>Teléfono:</strong>957355236</li>
+            <li><strong>Fecha de Nacimiento:</strong>13/07/2002</li>
+            <li><strong>Email:</strong>77285809@usat.pe</li>           
+        </ul>
+    </div>
+    
+    <div id="enlaces">
+        <h3>Síguenos en</h3>
+        <ul>
+            <li> <a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+            <li> <a href="https://www.instagram.com/?hl=es-la" target="_blank">Instagram</a></li>
+            <li> <a href="https://twitter.com/?lang=es" target="_blank">Twitter</a></li>
+            <li> <a href="https://www.youtube.com/" target="_blank">Youtube</a></li>              
+        </ul>
+    </div>
+   
+    <div id="enlaces">
+        <h3>Enlaces de Interés</h3>
+        <ul>
+            <li><a href="http://www.usat.edu.pe/" target="_blank">USAT</a></li>
+            <li><a href="https://www.bbc.com/mundo" target="_blank">BBC Mundo</a></li>
+            <li><a href="https://www.redalyc.org/" target="_blank">Redalyc</a></li>
+            <li><a href="http://renati.sunedu.gob.pe/" target="_blank">RENATI</a></li>
+        </ul>
+    </div>
+    
+    <div id="enlaces">
+        <h3>Menú</h3>
+        <ul>
+            <li><a href="/Practica02/index.html">Inicio</a></li>
+            <li><a href="/Practica02/curriculum.html">Curriculum</a></li>
+            <li><a href="/Practica02/proyecto.html">Proyectos</a></li>
+            <li><a href="/Practica02/contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+  
+      </aside>
+      <footer>
+        <h4 id="pie">WebMaster: Zuloeta López, Mirella Jazmín</h4>
+      </footer>
+   </main> 
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+.grid{
+    
+    margin: 100px;/*para que ocupe todo*/
+    max-width: 1000px;
+    min-height: 0vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 50px 1fr 100px 50px;
+    grid-template-areas: "my-header" "my-nav" "my-section" "my-aside" "my-footer";
+    position: absolute;
+   
+}
+header{
+    grid-area: my-header;
+    background-color: rgb(255, 255, 255);
+}
+nav{
+    grid-area: my-nav;
+    background-color: rgb(117, 110, 110);
+    color: white;
+    text-align: left;
+    padding: 20px;
+}
+section{
+    grid-area: my-section;
+    background-color: rgb(228, 200, 221);
+    margin: 0px;
+    border: solid;
+    border-color: rgb(88, 44, 133);
+    border-width: 15px;
+}
+aside{
+    grid-area: my-aside;
+    background-color: rgb(145, 18, 145);
+color: white;
+font-family: helvetica;
+padding: 15px;
+}
+footer{
+    grid-area: my-footer;
+    background-color: darkorchid;
+}
+p{
+   
+    color: white;
+    font-family: helvetica;
+}
+#contacto{
+    color: white;
+    font-family: helvetica;
+    text-align: center;
+}
+#parrafo{
+   color: black;
+   text-align: left;
+}
+h3{
+    font-family: helvetica;
+    text-align: left;
+}
+h1{
+    color: gray;
+    font-family: cursive;
+    margin: -10px;
+  font-size: 40px;
+}
+#subtitulo{
+    color: red;
+    font-family: helvetica;
+    padding: -3px;
+    margin: -8px;
+    
+}
+#contenedor{
+    float: left;
+    text-align: center;
+}
+img{
+    width: 350px;
+    height: 200px;
+    float: right;
+}
+#foto1{
+    float: left;
+    width: 90px;
+    height: 110px;
+    padding: 5px;
+    
+}
+#foto2{
+    float: left;
+    width: 100px;
+    height: 140px;
+    
+}
+#foto3{
+    float: left;
+    width: 100px;
+    height: 180px;
+}
+#fondo{
+    width: 1900px;
+    height: 1100px;
+}
+@media (min-width:600px) and (max-width:1000px){
+.grid{
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 150px 50px 1fr 100px;
+    grid-template-areas: "my-header my-header" "my-nav my-nav" "my-aside my-section" "my-footer my-footer";
+}
+}
+@media (min-width:1001px){
+    .grid{
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: 200px 1fr 80px;
+        grid-template-areas: "my-header my-header my-header" "my-nav  my-section my-aside" "my-footer my-footer my-footer";
+    }
+}
