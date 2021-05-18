@@ -83,6 +83,9 @@
         padding: 5px;
         margin: 10px;
     }
+    #datos_personales,#mejor_pelicula,#seleccion_peliculas{
+        background-color: blanchedalmond;
+    }
     #enlaces{
         padding-left: 50px;
         padding-right: 50px;
