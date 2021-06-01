@@ -1,0 +1,12 @@
+.bloque{
+    background-color: rgb(241, 231, 169);
+    width: 150px;
+    height: 120px;
+    padding:5px;
+}
+#c1b{
+    background-color: rgb(228, 177, 243);
+}
+li{
+    list-style: none;
+}

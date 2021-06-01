@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/agenda.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario" name="formulario" method="POST" action="data.php" >
+        <fieldset id="datos_personales" >
+           
+            <label for="nombre">Nombre:</label>  <br>
+            <input type="text" name="nombre" id="nombre"> <br><br>
+            
+            <label for="celular">Num Celular:</label> <br>
+            <input type="text" name="celular" id="celular"> <br><br>
+            
+            <input type="button" onclick="guardarDatos()" value="Guardar datos"> <br> <br>          
+            <input type="button" onclick="recuperarDatos()" value="Recuperar datos">
+        
+            <p id="datos">Pulsa recuperar datos para ver la info</p>
+        
+        </fieldset> 
+    </form>
+
+    <script type="text/javascript" src="js/miprograma.js"></script>
+</body>
+</html>

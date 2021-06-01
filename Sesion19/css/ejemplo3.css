@@ -1,0 +1,47 @@
+p{
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes slidein{
+    0%{
+        margin-left: 100%;
+        width: 300%;
+    }
+    30%{
+        background-color: orange;
+    }
+    60%{
+        background-color: royalblue;
+    }
+    90%{
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+body{
+    overflow: hidden;
+}
+
+/* p{
+    animation-duration: 3s;
+    animation-name: slidein;
+} */
+
+/* @keyframes slidein{
+    from{
+        margin-left: 100%;
+        width: 300%;
+    }
+    to{
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+*/
+
+/* p{
+    animation: 3s infinite alternate slidein;
+} */
