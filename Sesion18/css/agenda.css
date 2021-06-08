@@ -1,19 +1,12 @@
-/* form{
+ form{
    width: 40%;
    margin: auto;
-} */
+} 
 /*para centrado*/
-/*
+
 input{
     display: block;
     margin: 10px;
 }
-*/
 
-#contenedor{
-    width: 360px;
-    margin: auto;
-    background-color: floralwhite;
-    padding-left: 10px;
-    font-family: calibri;
-}
+

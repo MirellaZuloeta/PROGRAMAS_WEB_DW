@@ -1,0 +1,199 @@
+div{
+    background: #eea685;
+    color: white;
+    padding: .2rem .3rem 0.5rem .2rem;
+    position: absolute;
+    border-radius: 1rem 1rem 0 0;
+    animation-name: animar;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+
+}
+body{
+    background-image: url(../img/fondo2.gif);
+    background-repeat: no-repeat;
+}
+@keyframes animar{
+    0%{
+        left: 1rem;
+        top: 1rem;
+    }
+    3%{
+        left: 10rem;
+        top: 0rem;
+        color: #ffffff;
+    }
+    6%{
+        top: 8rem;
+        left: 10rem;
+        color: white;
+    }
+    9%{
+        top: 8rem;
+        left: 13rem;
+        color: white;
+    }
+    12%{
+        top: 12rem;
+        left: 13rem;
+        color: white;
+    } 
+    15%{
+        top: 12rem;
+        left: 10rem;
+        color: white;
+    }  
+    18%{
+        top: 18rem;
+        left: 10rem;
+        color: white;
+    }
+    21%{
+        top: 18rem;
+        left: 20rem;
+        color: white;
+    } 
+    24%{
+        top: 12rem;
+        left: 20rem;
+        color: white;
+    }
+    27%{
+        top: 12rem;
+        left: 17rem;
+        color: white;
+    }
+    30%{
+        top: 8rem;
+        left: 17rem;
+        color: white;
+    } 
+    33%{
+        top: 8rem;
+        left: 20rem;
+        color: white;
+    } 
+    36%{
+        top: 5rem;
+        left: 20rem;
+        color: white;
+    }
+    39%{
+        top: 5rem;
+        left: 23rem;
+        color: white;
+    }
+    42%{
+        top: 8rem;
+        left: 23rem;
+        color: white;
+    }
+    45%{
+        top: 8rem;
+        left: 26rem;
+        color: white;
+    }
+    48%{
+        top: 12rem;
+        left: 26rem;
+        color: white;
+    }
+    51%{
+        top: 12rem;
+        left: 23rem;
+        color: white;
+    }
+    54%{
+        top: 19rem;
+        left: 23rem;
+        color: white;
+    }
+    57%{
+        top: 19rem;
+        left: 26rem;
+        color: white;
+    }
+    60%{
+        top: 25rem;
+        left: 26rem;
+        color: white;
+    }
+    63%{
+        top: 25rem;
+        left: 20rem;
+        color: white;
+    }
+    66%{
+        top: 28rem;
+        left: 20rem;
+        color: white;
+    }
+    69%{
+        top: 28rem;
+        left: 10rem;
+        color: white;
+    }
+    72%{
+        top: 25rem;
+        left: 10rem;
+        color: white;
+    }
+    75%{
+        top: 25rem;
+        left: 3rem;
+        color: white;
+    }
+    78%{
+        top: 20rem;
+        left: 3rem;
+        color: white;
+    }
+    81%{
+        top: 20rem;
+        left: 6rem;
+        color: white;
+    }
+    84%{
+        top: 12rem;
+        left: 6rem;
+        color: white;
+    }
+    87%{
+        top: 12rem;
+        left: 3rem;
+        color: white;
+    }
+    90%{
+        top: 8rem;
+        left: 3rem;
+        color: white;
+    }
+    92%{
+        top: 8rem;
+        left: 6rem;
+        color: white;
+    }
+    94%{
+        top: 4rem;
+        left: 6rem;
+        color: white;
+    }
+    96%{
+        top: 4rem;
+        left: 10rem;
+        color: white;
+    }
+    98%{
+        top: 0rem;
+        left: 10rem;
+        color: white;
+    }
+    100%{
+        top: 1rem;
+        left: 1rem;
+    }
+
+
+}
+
+

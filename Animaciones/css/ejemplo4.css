@@ -1,0 +1,43 @@
+.my-element {
+    display: inline-block;
+    margin: 0 0.5rem;
+  
+    animation: bounce; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+   /*  --animate-repeat: 2; */
+  }
+
+  .animate__animated.animate__bounce {
+    --animate-duration: 2s;
+  }
+  
+  /* This changes all the animations globally */
+ /*  :root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+  } */
+
+  body { text-align: center }
+
+/* Position and style the notice banner */
+.motionless__banner {
+  display: none; /* hides the banner when animations are enabled */
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: .5rem 1rem;
+
+  background: #333;
+  color: #fff;
+  border-top: 2px solid #ff5722;
+}
+
+.motionless__paragraph {
+  margin-bottom: 0;
+}
+
+/* Show the banner if the user disables animations in the OS level */
+@media (print), (prefers-reduced-motion: reduce) {
+  .motionless__banner {
+    display: block;
+  }
+}
