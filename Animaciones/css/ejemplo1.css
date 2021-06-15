@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: helvetica;
+  font-family: 'Segoe UI';
   overflow-x: hidden;
   color: #333;
 }
@@ -42,7 +42,7 @@ header h2 {
   font-size: 2em;
 }
 
-header span.animated {
+header span.animate__bounce {
   position: absolute;
   margin: auto;
   right: 0;
@@ -50,7 +50,7 @@ header span.animated {
   bottom: 50px;
   height: 4px;
   width: 4px;
-  border-radius: 2px;
+  border-radius: 0px;
   background: #fff;
   animation-duration: 2.5s;
   animation-iteration-count: infinite;
@@ -196,8 +196,9 @@ button:hover {
   /* Fallback color */
   color: #30cc8b;
   background: -webkit-linear-gradient(left, #e1d1ff, #f5e1ac);
-  -webkit-background-clip: text;
+ 
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   cursor: pointer;
 }
 
@@ -215,7 +216,7 @@ footer span {
 }
 
 footer span:nth-child(2) {
-  color: #30cc8b;
+  color: #eb772b;
   animation-duration: 5s;
 }
 

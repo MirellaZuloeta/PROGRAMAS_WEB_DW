@@ -1,0 +1,14 @@
+#contenedor{
+    background-color:rgb(135, 211, 221) ;
+}
+/* .contenedor .row>div{
+    background: rgb(233, 166, 166);
+    border:2px solid white;
+    padding: 10px;
+} */
+.row{
+    background: rgb(233, 166, 166);
+    border:2px solid white;
+    padding: 10px;
+}
+
