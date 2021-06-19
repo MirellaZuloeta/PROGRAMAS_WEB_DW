@@ -1,0 +1,53 @@
+body{
+    background: linear-gradient(to right, rgba(250, 208, 196, 0.5), rgba(255, 209, 255, 0.5))
+}
+#unico,.col-md-3{
+    background-color:white ;
+    
+    margin: auto;
+    margin-top: 80px; 
+    padding: 18px;
+    height: 560px;
+}
+
+span {
+    width: 110px;
+    display: block;
+    float: left;
+    padding-left: 4px;
+ 
+}
+
+.nom{
+    background-color:rgba(186, 200, 224, 0.5); 
+    width: 200px;   
+}
+
+.lead{
+    background-color:rgba(106, 133, 182, 0.5);
+    width: 200px;
+}
+
+li{
+    list-style: none;
+    margin-top: 1px;
+}
+
+ul{
+    margin: 0px;
+    padding-left: 0px;
+}
+h3{
+    font-family: calibri;
+    font-size: 25px;
+    margin: 5px;
+}
+.btn.btn-primary{
+    border-radius: 30px;
+}
+#pie{
+    background-color: white;
+}
+.btn-info,.btn-warning{
+    color: white;
+}

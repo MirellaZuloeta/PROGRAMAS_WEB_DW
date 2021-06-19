@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/agenda.css">
+    <link rel="icon" href="../img/icononota.png">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <title>Mi Agenda V.03</title>
+</head>
+<body onload="actualizarDatos()">
+  
+  
+  <div class="row">
+  
+    <div class="col-md-2"></div>
+    
+      <div class="col-md-3"><img src="img/agenda.jpg" alt=""></div>
+      
+     
+        <form class="needs-validation col-md-5" novalidate id="unico">
+        <p class="display-4">Mi agenda de contactos</p>
+    
+        <div id="contenido ">
+       
+            <label for="validationCustom01">Nombre de Contacto:</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        
+        </div>        
+          <div id="contenido">
+      
+                <label for="validationCustom05">Numero de Celular:</label>
+                <input type="text" class="form-control" id="movil" placeholder="Celular" required>
+                <div class="invalid-feedback">
+                  Ingrese numero
+                </div>
+           
+            </div>  
+      <div id="contenido">
+            
+                <label for="validationCustom05">Correo Electrónico:</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                <div class="invalid-feedback">
+                 Ingrese un correo
+                </div> 
+             
+            </div><br>
+            <button class="btn btn-success" type="button" onclick="guardarDato()">Guardar</button>
+            <button class="btn btn-info" type="button" onclick="recuperarDato()">Recuperar</button>
+            <button class="btn btn-warning" type="button" onclick="eliminarDato()">Eliminar</button>
+            <button class="btn btn-danger" type="button" onclick="eliminarTodo()">Eliminar Todos</button>
+            <hr> 
+            <span class="lead text-center">NOMBRE</span> <span class="lead text-center">CELULAR</span> <span class="lead text-center"> EMAIL </span> <br>
+            <ul  class="text-center" id ="contactos"></ul>
+
+            <div class="container p-4 pb-0  text-center text-white" id="pie">
+              <!-- Section: Social media -->
+              <section class="mb-4">
+                <!-- Facebook -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #3b5998;"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+          
+                <!-- Twitter -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #55acee;"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                    
+                <!-- Github -->
+                <a
+                  class="btn btn-primary btn-floating m-1"
+                  style="background-color: #333333;"
+                  href="#!"
+                  role="button"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </section>
+              <!-- Section: Social media -->
+            </div>
+          </form>
+          <div class="col-md-2"></div>
+          </div>  
+      
+   
+      
+
+<script type = "text/javascript" src="js/agenda.js"></script>
+</body>
+</html>

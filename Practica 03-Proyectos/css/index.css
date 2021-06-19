@@ -1,0 +1,87 @@
+
+.img-logo{
+    width:100%;
+}
+aside{
+    background-color: #E94560;
+    /* border-width: 0.5px;
+    border-color:#02475E;
+    /* border-color:#0d6efd; */
+    /* border-style: solid; */
+}
+.rights{
+    color:white;
+}
+.list-group-item{
+    background-color:#E94560;
+    color:white;
+}
+.list-group-item.active{
+    background-color:white;
+    border-color:#0F3460;
+    color:#495057;
+}
+.btn-primary{
+    background-color:#0F3460;
+    border-color:#0F3460;
+}
+.btn-dark:hover{
+    background-color:white;
+    color:black;
+}
+.enlaces-footer{
+    text-decoration:none;
+}
+.btn-modal{
+    background-color: white;
+    border-width: 0;
+    color:#02475E;
+}
+.img-modal{
+    width:100%;
+}
+.card-img-top{
+    margin:auto;
+    height:40%;
+    width: 60%;
+    padding-top: 1rem;
+}
+.bg-gris{
+ /* background-color:#DDDDDD; */
+ background-color:white;
+}
+.fas.fa-users.fa-2x,.fas.fa-shopping-cart.fa-2x{
+    color:#02475E;
+    
+}
+.fas.fa-users.fa-2x:hover{
+    color:black;
+    
+}
+
+.card-header{
+    font-size: x-large;
+    font-weight: bold;
+    text-align: left;
+}
+.card-footer{
+    font-size: x-large;
+    font-weight: bold;
+}
+header{
+    color:#02475E;
+}
+main{
+    background-color:#ebf5eb;
+    color:#02475E;
+}
+.card-group{
+text-align: center;
+
+}
+.card-img-top{
+height: 177px;
+}
+#fondo{
+    height: 150px;
+    }

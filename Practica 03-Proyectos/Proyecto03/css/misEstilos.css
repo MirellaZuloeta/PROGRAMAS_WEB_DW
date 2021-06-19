@@ -1,0 +1,58 @@
+html,body{
+    height: 100%;
+}
+#cover{
+    background: #222 url(../img/fondo2.jpg) center no-repeat;
+    background-size: 100%;
+    color: white;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+#cover-texto{
+    width: 100%;
+}
+form{
+    float: left;
+}
+.card-group{
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 40px;
+}
+h2,#comentario{
+    padding-left: 80px;
+}
+
+nav{
+    background: linear-gradient(to right, #585c56, #a0e7a0);
+}
+.animate__animated.animate__bounceInDown {
+    --animate-duration: 1s;
+  }
+  
+  .btn.btn-info{
+      color: white;
+  }
+  .card-group{
+    text-align: center;
+    
+    }
+    .fab.fa-facebook-f{
+        color: #5277c7
+    }
+    .fab.fa-twitter{
+        color: deepskyblue;
+    }
+    .fab.fa-google-plus-g{
+color: red;
+    }
+hr{
+    color: #00a2c2;
+    width: auto;
+}
+.dropdown-item{
+color: #198754;
+}
