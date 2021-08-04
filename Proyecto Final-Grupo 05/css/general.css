@@ -1,0 +1,22 @@
+.btn-modal{
+    background-color: white;
+    border-width: 0;
+    color:#02475E;
+}
+.img-modal{
+    width:100%;
+}
+.card-img-top{
+    margin:auto;
+    height:40%;
+    width: 60%;
+    padding-top: 1rem;
+}
+.fas.fa-users.fa-2x{
+    color:#02475E;
+    
+}
+.fas.fa-users.fa-2x:hover{
+    color:black;
+    
+}
