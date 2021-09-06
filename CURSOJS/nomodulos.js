@@ -1,0 +1,1 @@
+console.log("nav no soporta archivos js")

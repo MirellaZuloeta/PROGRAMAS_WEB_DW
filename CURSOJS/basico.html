@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>MIRE ZULOETA</h1>
+    <ul>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ul>
+    <script>
+        /*
+        //TEMA: VAR Y LET
+        var hola = "Hola Mundo";//De ambito global
+        let hello = "hello world";//De ambito de bloque
+        console.log(hola);
+        console.log(hello);
+        console.log(window);
+        console.log(window.hola);
+        console.log(window.hello);
+        //Ambito de bloque
+        var musica = "Rock";
+        console.log("Variable musica antes del bloque", musica);
+        //Esto es un bloque
+        {
+            var musica = "Pop";
+            console.log("Variable musica antes del bloque", musica);
+        }
+        var musica = "Pop";
+        console.log("Variable musica despues del bloque", musica);
+
+
+        console.log("*****************LET****************");
+        let musica2 = "Rock";
+        console.log("Variable musica antes del bloque", musica2);
+        //Esto es un bloque
+        {
+            let musica2 = "Pop";
+            console.log("Variable musica antes del bloque", musica2);
+        }
+
+        console.log("Variable musica despues del bloque", musica2);
+*/
+
+
+
+        /*
+        //TEMA: CONSTANTES
+                const PI = 3.14;
+                console.log(PI);
+        
+                const objeto = { nombre: "Jazmin", edad: 33 };
+                const colores = [
+                    "blanco", "negro"
+                ];
+        
+                console.log(objeto);
+                console.log(colores);
+        
+                objeto.correo = "mirella@gmail";
+                colores.push("naranja");
+        
+                console.log(objeto);
+                console.log(colores);
+        
+         */
+
+
+
+        /*
+                //TEMA: STRING
+                let nombre = "Jaz";
+                let apellido = "Zuloeta";
+                let saludo = new String("Hellou");
+                let lorem = "asjdlkcjaskdlfjaswkldfjslkdf mire jaz";
+        
+                console.log(nombre, apellido, saludo);
+        
+                console.log(nombre.length,
+                    apellido.length,
+                    saludo.length,
+                    nombre.toUpperCase(),
+                    apellido.toLowerCase(),
+                    lorem.includes("amennnnnnnn"),
+                    lorem.includes("mire"),
+                    lorem,
+                    lorem.trim());
+        */
+
+        /*
+        //TEMA: TEMPLATE STRINGS
+        let nombre = "Mirella";
+        let apellido = "Lopez";
+        //Concatenar
+        let saludo = "HOLA SOY" + " " + nombre;
+        console.log(saludo)
+        //Interpolacion de variables
+        //Template String: otra manera de unir cadenas
+        let saludo2 = `Hola me llamo ${nombre} ${apellido}`;
+        console.log(saludo2)
+        */
+        /*
+         //TEMA: NUMEROS
+         let a = 2;
+         let b = new Number(1);
+         let c = 7.19;
+         let d = "5.6";
+ 
+         console.log(a, b);
+         console.log(c.toFixed(1));
+         console.log(c.toFixed(5));
+         console.log(parseInt(c));
+         console.log(typeof c, typeof d);
+         console.log(a + b);
+         console.log(c + parseInt(d))
+         console.log(c + parseFloat(d))
+         console.log(c + Number.parseFloat(d))
+         console.log(c + Number.parseInt(d))
+         */
+
+        /*
+        //TEMA: BOOLEANOS
+        let verdad = true;
+        let falso = false;//literalmente
+        let v = Boolean(true)//con el constructor
+        console.log(verdad, falso)
+        console.log(typeof verdad, typeof falso)
+
+        console.log(Boolean(0));
+        console.log(Boolean(-1));
+        console.log(Boolean(""));
+        console.log(Boolean(12));
+        */
+
+        /*
+                //TEMA: OBJETOS
+                let a = new String("Hola");
+                //console.log(a)
+        
+                const b = {};
+                console.log(b);
+        
+                const c = new Object();
+                console.log(c);
+        
+                const mire = {
+                    nombre: "mirella",
+                    apellido: "zulo",
+                    edad: 19,
+                    pasatiempo: ["comer", "ver series", "estudiar"],
+                    soltero: true,
+                    contacto: {
+                        email: "mirellazuloeta13@gmail.com",
+                        twitter: "notengo",
+                        movil: "19238109238"
+                    },
+                    saludo: function () {
+                        console.log("jelou")
+                    },
+                    decirMiNombre: function () {
+                        console.log(`Hola me llamo ${this.nombre} ${this.apellido}`)
+                    }
+                }
+        
+                console.log(mire);
+                console.log(mire["nombre"]);//manera 1 de acceder
+                console.log(mire.contacto);//manera eficiente
+                console.log(mire.pasatiempo[1]);
+                console.log(mire.contacto.twitter);
+                mire.saludo();
+                mire.decirMiNombre();
+        
+                console.log(Object.keys(mire))
+                console.log(Object.values(mire))
+                console.log(mire.hasOwnProperty("nombre"))
+        
+                */
+
+
+
+
+        /*
+                //TEMA: OPERADORES
+                //O.ARITMETICOS
+                let a = 5 * 5
+                let b = 5 % 2
+                console.log(a)
+                console.log(b)
+        
+                //O.RELACIONALES
+                console.log(8 > 9)
+                console.log(1 == 1)
+                console.log('7' == 7)
+                console.log(0 === false)
+              
+              //  = asignacion de variables
+                //== comparacion de valores
+                //=== comparacion de valor y de tipo de dato: SE DEBE USAR
+                
+        
+                //O.INCREMENTO Y DECREMENTO
+                let i = 1;
+        
+                console.log(i++)//este es mejor
+                console.log(++i)//este puede tener falla
+        
+                //i=i+2;
+                //i += 3;
+                //-= *= /= 
+        
+        
+                //O.UNARIO
+                //i++ i-- ++i --i
+        
+                console.log(i)
+        
+                //O.LOGICO
+                
+              //  ! not
+               // || or
+                // && and
+                
+        */
+
+
+
+
+
+        /*
+    //TEMA: CONDICIONALES
+    // else if
+
+    let hora = 5;
+    if (hora >= 0 && hora <= 5) {
+        console.log("D E J A M E    D O R M I R")
+
+    } else if (hora >= 6 && hora <= 11) {
+        console.log("B U E N O S   D I A S")
+    } else {
+        console.log("B U E N A S  N O C H E S")
+    }
+    //OPERADOR TERNARIO
+    console.log("OPERADOR TERNARIO")
+    let edad = 19;
+    let eresMayor = (edad >= 18) ? "ERES MAYOR DE EDAD" : "ERES MENOR DE EDAD";
+    console.log(eresMayor);
+
+
+    //SWITCH
+    let dia = 13;
+    switch (dia) {
+        case 1:
+            console.log("LUNES")
+            break;
+        case 2:
+            console.log("MARTES")
+            break;
+        case 3:
+            console.log("MIERCOLES")
+            break;
+        case 4:
+            console.log("JUEVES")
+            break;
+        case 5:
+            console.log("VIERNES")
+            break;
+        case 6:
+            console.log("SABADO")
+            break;
+        case 7:
+            console.log("DOMINGO")
+            break;
+
+        default:
+            console.log("NO EXISTE ESE DIA")
+            break;
+    }
+        */
+
+        /*
+                //TEMA: CICLOS
+                //WHILE
+                let contador = 0;
+        
+                while (contador < 10) {
+                    console.log("while " + contador)
+                    contador++;
+                }
+                //WHILE
+                do {
+                    console.log("do while " + contador)
+                    contador++
+                } while (contador < 10);
+        
+                //FOR
+                for (let i = 0; i < 10; i++) {
+                    console.log("for " + i)
+        
+                }
+                let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+                for (let i = 0; i < numeros.length; i++) {
+                    console.log(numeros[i])
+                }
+        
+                const jazmin = {
+                    nombre: "mirella",
+                    apellido: "lopez",
+                    edad: 19
+        
+                }
+                for (const propiedad in jazmin) {//para objetos
+                    console.log(`key:${propiedad}, values:${jazmin[propiedad]}`);
+                }
+                for (const elemento of numeros) {//para arreglos y cadenas
+                    console.log(elemento)
+                }
+                let jazmina = "mireksknalks dkajsALKD"
+                for (const elemento of jazmina) {//para arreglos y cadenas
+                    console.log(elemento)
+                }
+                */
+
+
+        /*
+                //TEMA: MANEJO DE ERRORES
+        
+                try {
+                    console.log("AQUI SE EVALUARA EL CODIGO")
+                    QUEES;
+                } catch (error) {
+                    console.log("se captura ese error")
+                    console.log(error)
+                } finally {
+                    console.log("SE VA A EJECUTAR AL FINAL DEL TRYCATCH")
+                }
+        
+        
+        
+                try {
+                    let numero = "Y";
+                    if (isNaN(numero)) {
+                        throw new Error("NO ES NUMEROOOOOOOOOOOOOO");
+                    }
+                    console.log(numero * 2);
+                } catch (error) {
+                    console.log(`ERROR: ${Error}`);
+                }
+        */
+        /*
+         //TEMA: BREAK AND CONTINUE
+         const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+         for (let i = 0; i < numeros.length; i++) {
+             if (i === 5) {
+                 break;
+             }
+             console.log(numeros[i])
+ 
+         }
+         for (let i = 0; i < numeros.length; i++) {
+             if (i === 5) {
+                 continue;
+             }
+             console.log(numeros[i])
+ 
+         }
+ 
+ */
+        /*
+        //TEMA: DESTRUCTURACION
+
+        //sin destructuracion
+        const numeros = [1, 2, 3];
+        let uno = numeros[0], dos = numeros[1], tres = numeros[2];
+
+        console.log(uno, dos, tres);
+
+        //con destructuracionn
+        const [one, two, three] = numeros;
+        console.log(one, two, three)
+
+        let persona = {
+            nombre: "jaz",
+            ape: "zul",
+            edad: 12
+
+        };
+        let { nombre, ape, edad } = persona;
+        console.log(nombre, ape, edad)
+        
+        */
+
+
+        /*
+        
+                //TEMA: OBJETOS LITERALES
+                let nombre = "kenai",
+                    edad = 7
+                const perro = {
+                    nombre: nombre,
+                    edad: edad,
+                    ladrar: function () {
+                        console.log("guauuuuuuuuuuuuuuuu")
+                    }
+                }
+                console.log(perro);
+                perro.ladrar()
+                const dog = {
+                    nombre,
+                    edad,
+                    raza: "callejero",
+                    ladrar() {
+                        console.log("guauuuuuuuuuuuuuuuu guau")
+                    }
+                }
+                console.log(dog)
+                dog.ladrar()
+        */
+
+        /*
+        
+                //TEMA: PROTOTIPOS
+                //DEL CONSTRUCTOR FUNCION CONSTRUCTURA
+                function Animal(nombre, genero) {
+                    this.nombre = nombre;
+                    this.genero = genero;
+                }
+        
+                //METODOS DE LA FUNCION CONSTRUCTORA
+                Animal.prototype.sonar = function () {
+                    console.log("HAGO SONIDOS PORQUE ESTOY VIVO")
+                }
+                Animal.prototype.saludar = function () {
+                    console.log(`HOLA ME LLAMO ${this.nombre}`);
+                }
+        
+        
+        
+        
+                //TEMA: HERENCIA PROTOTIPICA
+                function Perro(nombre, genero, tamanio) {
+                    this.super = Animal;
+                    this.super(nombre, genero);
+                    this.tamanio = tamanio;
+                }
+        
+        
+                //PERRO ESTA HEREDANDO DE ANIMAL
+                Perro.prototype = new Animal();
+                Perro.prototype.constructor = Perro;
+        
+                //SOBREESCRITURA DE METODOS DEL PROTOTIPICO PADRE EN HIJO
+                Perro.prototype.sonar = function () {
+                    console.log("SOY UN PERRO Y MI SOONIDO DE LADRIDO");
+                }
+                Perro.prototype.ladrar = function () {
+                    console.log("GUA GUAUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+                }
+        
+        
+                const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
+                    lolaBunny = new Animal("Lola Bunny", "Hembra");
+        
+        
+                console.log(snoopy);
+                console.log(lolaBunny);
+        
+        
+                snoopy.sonar();
+                snoopy.saludar();
+                snoopy.ladrar();
+                lolaBunny.sonar();
+                lolaBunny.saludar();
+        
+        
+        */
+
+
+
+        /*
+        //TEMA: CLASES Y HERENCIA
+        class Animal {
+            //se ejecuta al momento de instanciar la clase
+            constructor(nombre, genero) {
+                this.nombre = nombre;
+                this.genero = genero;
+            }
+
+            //METODOS DE LA FUNCION CONSTRUCTORA
+            sonar() {
+                console.log("HAGO SONIDOS PORQUE ESTOY VIVO");
+            }
+            saludar() {
+                console.log(`HOLA ME LLAMO ${this.nombre}`);
+            }
+        }
+        class Perro extends Animal {
+            constructor(nombre, genero, tamanio) {
+                //con el metodo super se llama al constructor del padre
+                super(nombre, genero);
+                this.tamanio = tamanio;
+                this.raza = null;
+
+            }
+            sonar() {
+                console.log("SOY UN PERRO Y MI SOONIDO DE LADRIDO");
+            }
+
+            ladrar() {
+                console.log("GUA GUA")
+            }
+            static queEeres() {
+                console.log("BLA BLA BLAAAAAAAAAAAAAAAAAAAA")
+            }
+
+            get getRaza() {
+                return this.raza;
+            }
+            set setRaza(raza) {
+                this.raza = raza;
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+        Perro.queEeres();
+
+
+
+
+
+        const mimi = new Animal("Mimi", "Hembra"), snoopy = new Perro("Snooby", "Macho", "gigante");
+        console.log(mimi);
+        mimi.saludar();
+        mimi.sonar();
+        console.log(snoopy)
+        snoopy.saludar();
+        snoopy.sonar();
+        snoopy.ladrar();
+
+        //se trata como atributo
+        snoopy.getRaza;
+
+        snoopy.setRaza = "gran danes";
+        console.log(snoopy.getRaza)
+
+        */
+
+
+
+
+        /*
+                //TEMA: OBJETO CONSOLE
+                console.log(console);
+                console.error("ESTO ES UN ERROR")
+                console.warn("ESTO ES UN AVISO")
+                console.info("MENSAJE INFORMATIVO")
+                console.log("UN REGISTRO DE QUE PASO EN LA APP")
+        
+                let nombre = "miri", apellido = "zulo", edad = 19;
+        
+                console.log(nombre)
+                console.log(apellido)
+                console.log(edad)
+        
+                console.log(nombre, apellido, edad)
+                console.log(`HOLA SOY ${nombre} ${apellido}`)
+        
+                console.log(`HOLA SOY %s %s y tengo %d años`, nombre, apellido, edad)
+        
+                console.clear();
+        
+                console.log(window)//window es objeto general de javascript
+                console.log(document)
+                console.dir(window)
+                console.dir(document)
+        
+                console.clear();
+        
+                console.group("cursos de jazmin")
+                console.log("KAsjdlkaSD")
+        
+                console.groupEnd();
+        
+                console.groupCollapsed("cursos de jazmin")
+                console.log("KAsjdlkaSD")
+                console.log("alSDJAklsc")
+                console.log("asfasf")
+                console.groupEnd();
+        
+                console.clear();
+                console.log(console);
+                console.table(Object.entries(console).sort())
+        
+                const numeros = [1, 2, 3, 4, 5], vocales = ["a", "e", "i", "o", "u"]
+        
+                console.table(numeros)
+        
+                console.table(vocales)
+        
+                const perro = {
+                    nombre: "miri",
+                    raza: "box",
+                    color: "azul"
+        
+                }
+                console.table(perro)
+                console.clear()
+                const arreglo = Array(100);
+        
+                console.time('TARDO')
+                for (let i = 0; i < arreglo.length; i++) {
+                    arreglo[i] = i;
+        
+                }
+                console.timeEnd('TARDO')
+        
+                //   console.log(arreglo)
+                console.clear()
+        
+        
+                for (let i = 0; i <= 10; i++) {
+        
+                    console.count("codigo for")
+                    console.log(i)
+        
+                }
+                console.clear()
+        
+                let x = 4, y = 2, pruebaxy = "se espera que x sea menor que y"
+                console.assert(x < y, (x, y, pruebaxy))
+        
+                */
+        /*
+                //TEMA: OBJETO DATE
+        
+                console.log(Date())
+        
+                let fecha = new Date()
+                console.log(fecha)
+                //Dia del mes
+                console.log(fecha.getDate())
+                //Dia de la semana
+                console.log(fecha.getDay())
+                //Dia del mes
+                console.log(fecha.getMonth())
+        
+                console.log(fecha.getFullYear())
+        
+                console.log(fecha.getHours())
+                console.log(fecha.getMinutes())
+                console.log(fecha.getSeconds())
+                console.log(fecha.getMilliseconds())
+                console.log(fecha.toString())
+                console.log(fecha.toDateString())
+                console.log(fecha.toLocaleString())
+                console.log(fecha.toLocaleDateString())
+                console.log(fecha.toLocaleTimeString())
+                console.log(fecha.getTimezoneOffset())
+                console.log(fecha.getUTCDate())
+                console.log(fecha.getUTCHours())
+                console.log(Date.now())
+        
+                let cumple = new Date(2002, 6, 13)
+                console.log(cumple)
+        
+                */
+
+        /*
+//CLASE: OBJETO MATH
+console.log(Math)
+console.log(Math.PI)
+console.log(Math.abs(-7.8))//valor absoluto
+console.log(Math.ceil(7.1))
+console.log(Math.sign(0))// -1 0 1
+console.log(Math.random())
+console.log(Math.random() * 1000)
+console.log(Math.round(Math.random() * 1000))
+*/
+
+
+        /*
+                //CLASE: OPERADOR CORTOCIRCUITO
+        
+              
+                cortocircuito OR: cuando el valor de la izquierda
+                en la expresion siempre puede validar a true, es el
+                valor que se cargará por defecto
+        
+                cortocircuito AND: Cuando el valor de la izquierda
+                en la expresion siempre puede validar a false, es el
+                valor se cargara por defecto
+              
+                function saludar(nombre) {
+                    nombre = nombre || "Desconocido";
+                    console.log(`hola ${nombre}`);
+                }
+                saludar("jhon")
+                saludar()
+                console.log("cadena" || "valor derecho")
+                console.log(19 || "valor derecho")
+                console.log([] || "valor derecho")
+                console.log({} || "valor derecho")
+                console.log(true || "valor derecho")
+                console.log(-2 || "valor derecho")
+        
+        
+                console.log(false || "valor derecho")
+                console.log(null || "valor derecho")
+                console.log(undefined || "valor derecho")
+                console.log("" || "valor derecho")
+                console.log(0 || "valor derecho")
+        
+        
+                console.log(false && "valor derecho")
+                console.log(null && "valor derecho")
+                console.log(undefined && "valor derecho")
+                console.log("" && "valor derecho")
+                console.log(0 && "valor derecho")
+        */
+        /*
+                //TEMA: ALERT, CONFIRM, PROMPT
+        
+                //  console.log(window)
+                //  window.alert("ES UNA ALERTA")
+                //window.confirm("ES UN CONFIRM")
+                // window.prompt("ES UN PROMPT")
+        
+                //  alert("ES UNA ALERTA")
+                //confirm("ES UN CONFIRM")
+                //  prompt("ES UN PROMPT")
+        
+                let alerta = alert("ES UNA ALERTA"),
+                    confirmar = confirm("ES UN CONFIRM"), aviso =
+                        prompt("ES UN PROMPT")
+        
+                console.log(alerta)
+                console.log(confirmar)
+                console.log(aviso)
+        */
+
+
+        /*
+                //CLASE: EXPRESIONES REGULARES
+                let cadena = "loremsdadkmckasmdcksdmc 1s lorem LOREM"
+        
+        
+                //let expReg = new RegExp("lorem", "ig")
+                //  let expReg2 = /lorem/ig
+                //  let expReg2 = /\d/ig
+                //let expReg2 = /[0-9]/ig
+                let expReg2 = /lorem{1,3}/ig
+        
+        
+                //  console.log(expReg.test(cadena))
+                //console.log(expReg.exec(cadena))
+                console.log(expReg2.test(cadena))
+                console.log(expReg2.exec(cadena))
+        */
+
+
+
+        /*
+                //CLASE: FUNCIONES ANONIMAS AUTOEJECUTABLES
+        
+        
+                //VERSION 1.0: CLASICO
+                (function () {
+                    console.log("my first version")
+                })();//aqui si es importante el ;
+                //VERSION 2.0: crockford
+                ((function () {
+                    console.log("my second version")
+                })());//aqui si es importante el ;
+                //VERSION 3.0: unaria
+                +function () {
+                    console.log("my third version")
+                }();//aqui si es importante el ;
+                //VERSION 4.0: facebook
+                !function () {
+                    console.log("my fourth version")
+                }();//aqui si es importante el ;
+        
+        
+                (function (d, w, c) {
+                    console.log("my second IIFE")
+                    console.log(d)
+                    console.log(w)
+                    console.log(c)
+                    c.log("es un console")
+                })(document, window, console);//aqui si es importante el ;
+        
+        
+        
+                alert("holiwis")
+            */
+
+
+        /*
+
+        // CLASE 36: EJERCICIOS DEL 1 AL 4
+        //EJERCICIO 1:
+
+        const contarCaracteres = (cadena = "") =>
+            (!cadena) ?
+                console.warn("No ingresaste cadena")
+                :
+                console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+        contarCaracteres();
+        contarCaracteres("JAZMIN");
+
+     //EJERCICIO 2
+              const recortar = (cadena = "", longitud = undefined) =>
+                  (!cadena)
+                      ? console.warn("No ingresaste cadena de texto")
+                      : (longitud === undefined)
+                          ? console.warn("No ingresaste longitud para cadena de texto")
+                          : console.info(cadena.slice(0, longitud));
+              recortar("hola jazmin")
+      
+      
+              //EJERCICIO 3
+              const cadenaAArreglo = (cadena = "", separador = undefined) =>
+                  (!cadena)
+                      ? console.warn("No ingresaste cadena de texto")
+                      : (separador === undefined)
+                          ? console.warn("No ingresaste longitud para cadena de texto")
+                          : console.info(cadena.split(separador));
+              cadenaAArreglo("hola,jazmin,zu", ",")
+      
+      
+              //EJERCICIO 4
+              const repetirTexto = (texto = "", veces = undefined) => {
+                  if (!texto) return console.warn("No ingresaste un texto");
+                  if (veces === undefined) return console.warn("No ingresaste el num de veces el texto");
+                  if (veces === 0) return console.error("NO PUEDE SER 0");
+                  if (Math.sign(veces) === -1) return console.error("EL NUMERO DE VECES NO PUEDE SER NEGATIVO");
+      
+                  for (let i = 1; i <= veces; i++) console.info(`${texto}, ${i}`)
+              }
+              repetirTexto("sdfgd") */
+
+        /* 
+                //CLASE 37: EJERCICIOS 5 AL 8
+                const invertirCadena = (cadena = "") =>
+                    (!cadena) ? console.warn("no hay cade")
+                        : console.info(cadena.split("").reverse().join(""));
+        
+                invertirCadena("asad") */
+
+        //CLASE 41:
+        /* 
+                const validarEmail = (email = "") => {
+                    if (!email) return console.warn("no ingresaste un email")
+                    if (typeof email !== "string") return console.error(
+                        `el valor "${email}" ingresado, NO ES CADENA`
+                    )
+        
+                    let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+        
+                    return (expReg)
+                        ? console.info(`"${email}", es un email valido`)
+                        : console.warn(`"${email}", NO VALE`)
+                }
+        
+                validarEmail();
+                validarEmail(34);
+                validarEmail("mi.jaz@gmail")
+                validarEmail("mirelcvbncla.zuloeta13@gmail.com") */
+
+
+        //CLASE 42
+
+        const devolverCuadrados = (arr = undefined) => {
+            if (arr === undefined) return console.warn("no ingreso arreglo de numeros")
+
+            if (!(arr instanceof Array)) return console.error("el valor que ingresaste no es arreglo")
+
+            if (arr.length === 0) return console.error("el arreglo esta vacio")
+
+            for (let num of arr) {
+                if (typeof num !== "number") return console.error(`el valor "${num}" ingresado, NO ES NUMERO`);
+            }
+
+            const newArr = arr.map(el => el * el);
+            return console.info(`arreglo original: ${arr}, \n arreglo elevado al cuadrado: ${newArr}`)
+        }
+
+        // devolverCuadrados()
+        //devolverCuadrados(true)
+        //  devolverCuadrados([])
+        //  devolverCuadrados([1, "2"])
+        devolverCuadrados([1, 2, 4, 5])
+    </script>
+</body>
+
+</html>

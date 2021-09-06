@@ -190,7 +190,7 @@ function llenarHTMLCarrito() {
             'class="btn btn-danger dflex-inline" onclick="removerCarrito(\'' + id + '\')">' +
             '<i class="fas fa-times"></i>' +
             '</button>' +
-            '</div></td><tr>';
+            '</div></td><tr>'; 
     }
     bodyCarrito.innerHTML = html;
     var suma = calcularTotal();

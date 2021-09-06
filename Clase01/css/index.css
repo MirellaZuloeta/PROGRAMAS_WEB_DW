@@ -1,0 +1,26 @@
+body {
+  background-color: lightblue;
+}
+h1 {
+  font-family: arial;
+}
+p {
+  font-family: arial;
+  font-size: 14px;
+}
+table {
+  background-color: white;
+}
+.fila {
+  font-family: verdana;
+}
+.filadatos {
+  font-family: arial;
+  font-size: 12px;
+}
+.par {
+  background-color: rgb(243, 192, 192);
+}
+.impar {
+  background-color: rgb(242, 250, 228);
+}

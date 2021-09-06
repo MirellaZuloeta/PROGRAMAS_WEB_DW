@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/agenda.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <!--   Diseñar una página web que registre la solicitud de un paciente para una atención médica, en el formulario el paciente
+    deberá registrar los siguientes datos: DNI, nombres, apellidos, fecha de nacimiento, lugar de nacimiento, dirección
+    actual, distrito, provincia, departamento, especialidad médica, día de la cita, turno (mañana, tarde o noche).
+    
+    La página deberá estar diseñada usando CSS y debe validar el formulario usando JavaScript (validar que las cajas de
+    texto no queden vacías al momento de presionar el botón "Enviar Datos"). -->
+    <center>
+        <h1> <i>Registro de Solicitud para Atencion Medica</i></h1> <br>
+    </center>
+
+    <form class="row g-4 needs-validation" novalidate>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">DNI:</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="DNI" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese DNI.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">NOMBRES:</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Nombres" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Nombres.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">APELLIDOS:</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Apellidos" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Apellidos.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">FECHA DE NACIMIENTO:</label>
+            <input type="date" class="form-control" id="validationDefault03" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Fecha de Nacimiento.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">LUGAR DE NACIMIENTO:</label>
+            <input type="text" class="form-control" id="validationCustom03" placeholder="Lugar de Nacimiento" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Lugar de Nacimiento.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom04" class="form-label">DIRECCION ACTUAL:</label>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="Direccion Actual" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Direccion Actual.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">DISTRITO:</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Distrito" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Distrito.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">PROVINCIA:</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Provincia" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Provincia.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">DEPARTAMENTO:</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Departamento" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Departamento.
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">ESPECIALIDAD MEDICA:</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Especialidad" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Especialidad Medica.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">DIA DE LA CITA:</label>
+            <input type="date" class="form-control" id="validationDefault02" required>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Dia de la Cita.
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">TURNO:</label>
+            <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Turno</option>
+                <option>Dia</option>
+                <option>Tarde</option>
+                <option>Noche</option>
+            </select>
+            <div class="valid-feedback">
+                Muy Bien!
+            </div>
+            <div class="invalid-feedback">
+                Por favor ingrese Turno.
+            </div>
+        </div>
+        <center>
+            <div class="col-12">
+                <button class="btn btn-success" type="submit">Enviar Datos</button>
+            </div>
+        </center>
+    </form>
+
+
+</body>
+<script src="js/agenda.js"></script>
+
+</html>
