@@ -16,4 +16,4 @@ def suma_v3(num1,num2):
     return resultado
 
 s=suma_v3(43,63)    
-print("la suma es: ",s)
+#print("la suma es: ",s) 
