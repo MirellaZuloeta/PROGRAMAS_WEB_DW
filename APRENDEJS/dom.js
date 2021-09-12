@@ -25,5 +25,3 @@ console.log(document.scripts);
 setTimeout(() => {
   console.log(document.getSelection().toString());
 }, 3000);
-
-document.write("<h1>hola</h1> ");

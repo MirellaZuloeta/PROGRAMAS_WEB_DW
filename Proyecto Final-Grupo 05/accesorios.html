@@ -14,61 +14,63 @@
 
 
 <body>
-
-
     <header class="bg-principal">
         <div class="container py-5 ">
             <div class="row">
                 <div class="col-1"><img class="img-logo" src="img/logo.png" alt=""></div>
                 <div class="col-9 text-start ps-5">
-                   <b> <h1 class="ps-5">Team's Clothes Store</h1></b>
+                    <b>
+                        <h1 class="ps-5">Team's Clothes Store</h1>
+                    </b>
                 </div>
                 <div class="col-2">
                     <div class="text-end">
-                     
+
                         <a class="link-dark" href="iniciosesion.html">
                             <i class="fas fa-user-circle fa-2x"></i></a>&nbsp;
-                            <button class="link-dark btn-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  onclick="llenarModalCarrito()">
-                                <i class="fa fa-cart-plus fa-2x"></i></button>
+                        <button class="link-dark btn-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                            onclick="llenarModalCarrito()">
+                            <i class="fa fa-cart-plus fa-2x"></i></button>
                     </div>
                 </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Resumen de compra</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row px-4">
-                        <div class="col-5 ps-5"><img class="img-modal" src="img/global/generica.jpg" alt=""></div>
-                        <div class="col-7">
-                            <ul class="list-unstyled text-end">
-                                <li id="cantidadTotalModal">Cantidad de productos:10</li>
-                                
-                                <li id="costoTotalModal"></li>
-                            </ul>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Resumen de compra</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row px-4">
+                                    <div class="col-5 ps-5"><img class="img-modal" src="img/global/generica.jpg" alt="">
+                                    </div>
+                                    <div class="col-7">
+                                        <ul class="list-unstyled text-end">
+                                            <li id="cantidadTotalModal">Cantidad de productos:10</li>
+
+                                            <li id="costoTotalModal"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <a href="compras.html" class="btn btn-primary">Ir a la tienda</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="compras.html" class="btn btn-primary">Ir a la tienda</a>
-                </div>
+
             </div>
-        </div>
-    </div>
-
-</div>
-</header>
+    </header>
 
 
 
-<br><br>
+    <br><br>
 
 
     <hr>
@@ -76,7 +78,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-withe bg-withe">
         <div class="container-fluid">
-            <a class="navbar-brand"  href="index.html" id="cabtext2">Home</a>
+            <a class="navbar-brand" href="index.html" id="cabtext2">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -98,10 +100,12 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="cabtext" aria-current="page" href="promociones.html">Promociones</a>
+                        <a class="nav-link active" id="cabtext" aria-current="page"
+                            href="promociones.html">Promociones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="cabtext" aria-current="page" href="contactos.html">Contáctanos</a>
+                        <a class="nav-link active" id="cabtext" aria-current="page"
+                            href="contactos.html">Contáctanos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" id="cabtext" aria-current="page" href="nosotros.html">Nosotros</a>
@@ -121,7 +125,7 @@
         </div>
     </nav>
 
-<br>
+    <br>
 
     <section>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -171,7 +175,7 @@
             </button>
         </div>
     </section>
-<br>
+    <br>
     <Section>
 
         <p class="p-3 fs-4"> Relojes</p>
@@ -182,14 +186,16 @@
                     <div class="card-body">
                         <center>
                             <img id="accesorio" src="img/accesorio/relojes/1.jpg" class="card-img-top" alt="...">
-                            <b><p>Reloj Análogo Unisex</p></b>
+                            <b>
+                                <p>Reloj Análogo Unisex</p>
+                            </b>
                             <p>S/ 169</p>
-                            <a  onclick="agregarCarrito('1')" class="btn btn-light">AÑADIR A CARRITO</a>
+                            <a onclick="agregarCarrito('1')" class="btn btn-light">AÑADIR A CARRITO</a>
                         </center>
                     </div>
-                   
+
                     <br>
-                    
+
                 </div>
             </div>
 
@@ -198,14 +204,16 @@
                     <div class="card-body">
                         <center>
                             <img id="accesorio" src="img/accesorio/relojes/2.jpg" class="card-img-top" alt="...">
-                            <b><p>Reloj Dual Multifunción Iluminación Cobra</p></b>
+                            <b>
+                                <p>Reloj Dual Multifunción Iluminación Cobra</p>
+                            </b>
                             <p>S/ 74.90 (Oferta)</p>
-                            <a  onclick="agregarCarrito('2')" class="btn btn-light">AÑADIR A CARRITO</a>
+                            <a onclick="agregarCarrito('2')" class="btn btn-light">AÑADIR A CARRITO</a>
                         </center>
                     </div>
-                   
+
                     <br>
-                    
+
                 </div>
             </div>
 
@@ -214,16 +222,18 @@
                     <div class="card-body">
                         <center>
                             <img id="accesorio" src="img/accesorio/relojes/3.jpg" class="card-img-top" alt="...">
-                            <b><p>Smart Band M5 Reloj Deportivo Bluetooth Rojo</p></b>
+                            <b>
+                                <p>Smart Band M5 Reloj Deportivo Bluetooth Rojo</p>
+                            </b>
                             <p>S/ 39</p>
-                            <a  onclick="agregarCarrito('3')" class="btn btn-light">AÑADIR A CARRITO</a>
+                            <a onclick="agregarCarrito('3')" class="btn btn-light">AÑADIR A CARRITO</a>
                         </center>
                     </div>
-                   
+
                     <br>
-                 
+
                 </div>
-               
+
             </div>
         </div>
 
@@ -236,30 +246,34 @@
                     <div class="card-body">
                         <center>
                             <img id="accesorio" src="img/hombre/chompas/17255388_1.jpg" class="card-img-top" alt="...">
-                            <b><p>Chompa Hombre Negra</p></b>
+                            <b>
+                                <p>Chompa Hombre Negra</p>
+                            </b>
                             <p>S/ 64.99</p>
-                            <a  onclick="agregarCarrito('4')" class="btn btn-light">AÑADIR A CARRITO</a>
+                            <a onclick="agregarCarrito('4')" class="btn btn-light">AÑADIR A CARRITO</a>
                         </center>
                     </div>
-                   
+
                     <br>
-                     
-                    </div>
+
                 </div>
+            </div>
 
             <div class="col">
                 <div class="card h-100">
                     <div class="card-body">
                         <center>
                             <img id="accesorio" src="img/hombre/chompas/881786273_1.jpg" class="card-img-top" alt="...">
-                            <b><p>Chompa Hombre con cierre</p></b>
+                            <b>
+                                <p>Chompa Hombre con cierre</p>
+                            </b>
                             <p>S/ 49.99</p>
-                            <a  onclick="agregarCarrito('5')" class="btn btn-light">AÑADIR A CARRITO</a>
-                    </center>
-                </div>
-               
-                <br>
-                 
+                            <a onclick="agregarCarrito('5')" class="btn btn-light">AÑADIR A CARRITO</a>
+                        </center>
+                    </div>
+
+                    <br>
+
                 </div>
             </div>
 
@@ -268,16 +282,18 @@
                     <div class="card-body">
                         <center>
                             <img id="accesorio" src="img/hombre/chompas/881786498_1.jpg" class="card-img-top" alt="...">
-                            <b><p>Chompa Hombre Blanca</p></b>
+                            <b>
+                                <p>Chompa Hombre Blanca</p>
+                            </b>
                             <p>S/ 77.94</p>
-                            <a  onclick="agregarCarrito('6')" class="btn btn-light">AÑADIR A CARRITO</a>
+                            <a onclick="agregarCarrito('6')" class="btn btn-light">AÑADIR A CARRITO</a>
                         </center>
                     </div>
-                   
+
                     <br>
-                 
+
                 </div>
-               
+
             </div>
         </div>
 
@@ -289,15 +305,18 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <center>
-                            <img id="accesorio" src="img/hombre/pantalones/18121445_1.jpg" class="card-img-top" alt="...">
-                            <b><p>Pantalón Cargo Hombre</p></b>
+                            <img id="accesorio" src="img/hombre/pantalones/18121445_1.jpg" class="card-img-top"
+                                alt="...">
+                            <b>
+                                <p>Pantalón Cargo Hombre</p>
+                            </b>
                             <p>S/ 59.90(Oferta)</p>
-                            <a  onclick="agregarCarrito('7')" class="btn btn-light">AÑADIR A CARRITO</a>
-                    </center>
-                </div>
-               
-                <br>
-                 
+                            <a onclick="agregarCarrito('7')" class="btn btn-light">AÑADIR A CARRITO</a>
+                        </center>
+                    </div>
+
+                    <br>
+
                 </div>
             </div>
 
@@ -305,147 +324,154 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <center>
-                            <img  id="accesorio" src="img/hombre/pantalones/881830375_1.jpg" class="card-img-top" alt="...">
-                            <b><p>Pantalón Hombre</p></b>
+                            <img id="accesorio" src="img/hombre/pantalones/881830375_1.jpg" class="card-img-top"
+                                alt="...">
+                            <b>
+                                <p>Pantalón Hombre</p>
+                            </b>
                             <p>S/ 88.49</p>
-                            <a  onclick="agregarCarrito('8')" class="btn btn-light">AÑADIR A CARRITO</a>
+                            <a onclick="agregarCarrito('8')" class="btn btn-light">AÑADIR A CARRITO</a>
                         </center>
                     </div>
-                   
+
                     <br>
-                     
-                    </div>
+
                 </div>
+            </div>
 
             <div class="col">
                 <div class="card h-100">
                     <div class="card-body">
                         <center>
-                            <img id="accesorio" src="img/hombre/pantalones/881836245_1.jpg" class="card-img-top" alt="...">
-                            <b><p>Pantalón Hombre Negro</p></b>
+                            <img id="accesorio" src="img/hombre/pantalones/881836245_1.jpg" class="card-img-top"
+                                alt="...">
+                            <b>
+                                <p>Pantalón Hombre Negro</p>
+                            </b>
                             <p>S/ 59.94</p>
-                            <a  onclick="agregarCarrito('9')" class="btn btn-light">AÑADIR A CARRITO</a>
-                            </center>
-                        </div>
-                       
-                        <br>
-                 
+                            <a onclick="agregarCarrito('9')" class="btn btn-light">AÑADIR A CARRITO</a>
+                        </center>
+                    </div>
+
+                    <br>
+
                 </div>
             </div>
         </div>
     </Section>
 
-    
- <br><br>
- <!-- Footer -->
-<footer class="bg-dark text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!-- Section: Social media -->
-   
 
-    <!-- Section: Links -->
-    <section class="">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <br><br><br>
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">¿TIENES DUDAS?</h5>
+    <br><br>
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <p>Telefono de Contacto</p>
-            </li>
-            <li>
-            <b>  <p>999-999-999</p></b>
-            </li>
-            <li>
-              <b>  <p>999-123-567</p></b>
-            </li>
-            <li>
-             <P>Email</P>
-             <p>Teamclothesstore@gmail.com</p>
-            </li>
-          </ul>
+
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <br><br><br>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">¿TIENES DUDAS?</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <p>Telefono de Contacto</p>
+                            </li>
+                            <li>
+                                <b>
+                                    <p>999-999-999</p>
+                                </b>
+                            </li>
+                            <li>
+                                <b>
+                                    <p>999-123-567</p>
+                                </b>
+                            </li>
+                            <li>
+                                <P>Email</P>
+                                <p>Teamclothesstore@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">EVENTOS</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <p>22 de Julio: Ofertas Fiestas Patrias</p>
+                            </li>
+                            <li>
+                                <p>21 de Agosto: Ofertas Otoño-Invierno</p>
+                            </li>
+                            <li>
+                                <p>21 de Setiembre: Ofertas Primavera</p>
+                            </li>
+                            <li>
+                                <p>22 de Diciembre: Campaña Navideña</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">SIGUENOS</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <P> <i class="fa fa-instagram"></i> <a href="#!" class="text-white">INSTAGRAM</a></P>
+                            </li>
+                            <li>
+                                <P> <i class="fa fa-twitter"></i> <a href="#!" class="text-white">TWITTER</a></P>
+                            </li>
+                            <li>
+                                <P> <i class="fab fa-facebook-f">&nbsp;</i><a href="#!" class="text-white">FACEBOOK</a>
+                                </P>
+                            </li>
+                            <li>
+                                <P> <i class="fa fa-youtube-play"></i> <a href="#!" class="text-white">YOUTUBE</a></P>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">NUESTRA TIENDA</h5>
+
+                        <img src="img/global/mapa.PNG" class="card-img-top" alt="...">
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
         </div>
-        <!--Grid column-->
+        <!-- Grid container -->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">EVENTOS</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <p>22 de Julio: Ofertas Fiestas Patrias</p>
-            </li>
-            <li>
-              <p>21 de Agosto: Ofertas Otoño-Invierno</p>
-            </li>
-            <li>
-              <p>21 de Setiembre: Ofertas Primavera</p>
-            </li>
-            <li>
-              <p>22 de Diciembre: Campaña Navideña</p>
-            </li>
-          </ul>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">WebMaster: Equipo 05 2021</a>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">SIGUENOS</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-           <P>  <i class="fa fa-instagram"></i
-              > <a href="#!" class="text-white">INSTAGRAM</a></P>
-            </li>
-            <li>
-              <P> <i class="fa fa-twitter"></i
-                  > <a href="#!" class="text-white">TWITTER</a></P>
-            </li>
-            <li>
-              <P> <i class="fab fa-facebook-f">&nbsp;</i
-                  ><a href="#!" class="text-white">FACEBOOK</a></P>
-            </li>
-            <li>
-              <P> <i class="fa fa-youtube-play"></i
-                  > <a href="#!" class="text-white">YOUTUBE</a></P>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">NUESTRA TIENDA</h5>
-
-          <img src="img/global/mapa.PNG" class="card-img-top" alt="...">
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </section>
-    <!-- Section: Links -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2021 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">WebMaster: Equipo 05 2021</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/8d33823b53.js" crossorigin="anonymous"></script>
-<script src="js/carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8d33823b53.js" crossorigin="anonymous"></script>
+    <script src="js/carrito.js"></script>
 </body>
 
 </html>
