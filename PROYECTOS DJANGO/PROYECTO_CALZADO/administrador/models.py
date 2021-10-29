@@ -3,9 +3,29 @@ from django.db.models.base import Model
 from django.db.models.fields import TextField
 
 # Create your models here.
+class Estilo(models.Model):
+     estiloID=models.AutoField(primary_key=True)
+     nombre=models.CharField(max_length=20, unique=True)
+     def __str__(self) :
+          return self.nombre
+
+class Dimension(models.Model):
+     dimensionID=models.AutoField(primary_key=True)
+     descripcion=models.CharField(max_length=20, unique=True)
+     def __str__(self) :
+          return self.descripcion
+
+class Color(models.Model):
+     colorID=models.AutoField(primary_key=True)
+     nombre=models.CharField(max_length=20, unique=True)
+     def __str__(self) :
+          return self.nombre
+#################################################
+
 class TipoProducto(models.Model):
      tipoProID=models.AutoField(primary_key=True)
      nombre=models.CharField(max_length=30)
+     imagen=models.ImageField(upload_to="tipoproductos", blank=True, null=True) 
      def __str__(self) :
           return self.nombre
 
@@ -16,25 +36,13 @@ class Marca(models.Model):
           return self.nombre
 
 class TipoDocumento(models.Model):
-     tipoDocID=models.IntegerField(primary_key=True)
+     tipoDocID=models.AutoField(primary_key=True)
      nombre=models.CharField(max_length=30, unique=True)
      def __str__(self) :
           return self.nombre
 
 class Estado(models.Model):
-     estadoID=models.IntegerField(primary_key=True)
-     descripcion=models.CharField(max_length=20, unique=True)
-     def __str__(self) :
-          return self.descripcion
-
-class TipoTarjeta(models.Model):
-     tipoTarID=models.IntegerField(primary_key=True)
-     descripcion=models.CharField(max_length=30, unique=True)
-     def __str__(self) :
-          return self.descripcion
-
-class MetodoPago(models.Model):
-     metodoID=models.IntegerField(primary_key=True)
+     estadoID=models.AutoField(primary_key=True)
      descripcion=models.CharField(max_length=20, unique=True)
      def __str__(self) :
           return self.descripcion
@@ -47,7 +55,7 @@ class Inventario(models.Model):
           return self.descripcion
 
 class Producto(models.Model):
-     codigoPro=models.IntegerField(primary_key=True)
+     codigoPro=models.AutoField(primary_key=True)
      nombre=models.CharField(max_length=100)
      precio=models.DecimalField(decimal_places=2,max_digits=12)
      precioMayor=models.DecimalField(decimal_places=2,max_digits=12)
@@ -56,6 +64,10 @@ class Producto(models.Model):
      talla=models.IntegerField()
      tipoProID=models.ForeignKey('TipoProducto', on_delete=models.DO_NOTHING, default=0)
      marcaID=models.ForeignKey('Marca', on_delete=models.DO_NOTHING, default=0)
+     estiloID=models.ForeignKey('Estilo', on_delete=models.DO_NOTHING, default=0)
+     dimensionID=models.ForeignKey('Dimension', on_delete=models.DO_NOTHING, default=0)
+     colorID=models.ForeignKey('Color', on_delete=models.DO_NOTHING, default=0)
+     imagen=models.ImageField(upload_to="productos", blank=True, null=True) 
      def __str__(self) :
           return self.nombre
 
@@ -68,10 +80,11 @@ class Cliente(models.Model):
   nomUsuario=models.CharField(max_length=30, unique=True)
   direccion=models.CharField(max_length=100)
   telefono=models.CharField(max_length=12)
-  sexo=models.CharField(max_length=1, null=True)
-  fechaNacimiento=models.DateField(null=True)
+  sexo=models.CharField(max_length=1,null=True, blank=True) #####################
+  fechaNacimiento=models.DateField(null=True, blank=True) ######################
   numeroDocumento=models.CharField(max_length=21, unique=True)
   tipoDocID=models.ForeignKey('TipoDocumento', on_delete=models.DO_NOTHING, default=0)
+  foto=models.ImageField(upload_to="clientes", blank=True, null=True) 
   def __str__(self) :
           return self.nombres
 
@@ -81,7 +94,6 @@ class Tarjeta(models.Model):
      cvv=models.IntegerField()
      mmaa=models.CharField(max_length=10)
      codigoCli=models.ForeignKey('Cliente', on_delete=models.DO_NOTHING, default=0)
-     tipoTarID=models.ForeignKey('TipoTarjeta', on_delete=models.DO_NOTHING, default=0)
      def __str__(self) :
           return self.numeroTarjeta
 
@@ -91,9 +103,8 @@ class Venta(models.Model):
      hora=models.TimeField()
      monto=models.DecimalField(decimal_places=2,max_digits=12)
      igv=models.DecimalField(decimal_places=2,max_digits=12)
-     descuento=models.DecimalField(decimal_places=2,max_digits=12, null=True)#default
+     descuento=models.DecimalField(decimal_places=2,max_digits=12,default=0) ########
      tarjetaID=models.ForeignKey('Tarjeta', on_delete=models.DO_NOTHING, default=0)
-     metodoID=models.ForeignKey('MetodoPago', on_delete=models.DO_NOTHING, default=0)
      def __str__(self) :
           return str(self.tarjetaID)
 
@@ -108,9 +119,9 @@ class DetalleInventario(models.Model):
      detalleInventarioID=models.AutoField(primary_key=True)
      precio=models.DecimalField(decimal_places=2,max_digits=12)
      cantidad=models.IntegerField()
-     cantidad_reposicion=models.IntegerField(null=True)
-     cantidad_defectuoso=models.IntegerField(null=True)#default
-     motivo=models.CharField(max_length=150, null=True)  
+     cantidad_reposicion=models.IntegerField(default=0) ##########################
+     cantidad_defectuoso=models.IntegerField(default=0) #########################
+     motivo=models.CharField(max_length=150, null=True, blank=True)  ################Mejorar Diagrama VPP
      estadoID=models.ForeignKey('Estado', on_delete=models.DO_NOTHING, default=0)
      codigoPro=models.ForeignKey('Producto', on_delete=models.DO_NOTHING, default=0)
      inventarioID=models.ForeignKey('Inventario', on_delete=models.DO_NOTHING, default=0)

@@ -1,8 +1,27 @@
 from django.contrib import admin
-from administrador.models import TipoProducto,Marca, TipoDocumento,TipoTarjeta,Tarjeta,Estado,MetodoPago,Inventario,Cliente,Producto, Venta,DetalleVenta,DetalleInventario
+from administrador.models import TipoProducto,Marca, TipoDocumento,Tarjeta,Estado,Inventario,Cliente,Producto, Venta,DetalleVenta,DetalleInventario, Estilo, Dimension, Color
 # Register your models here.
+
+class EstilosAdmin(admin.ModelAdmin):
+     list_display=("estiloID","nombre")
+     search_fields=("nombre",)
+     list_filter=("nombre",)
+
+class DimensionesAdmin(admin.ModelAdmin):
+     list_display=("dimensionID","descripcion")
+     search_fields=("descripcion",)
+     list_filter=("descripcion",)
+
+class ColoresAdmin(admin.ModelAdmin):
+     list_display=("colorID","nombre")
+     search_fields=("nombre",)
+     list_filter=("nombre",)
+
+
+
+
 class TipoProductosAdmin(admin.ModelAdmin):
-     list_display=("tipoProID","nombre")
+     list_display=("tipoProID","nombre","imagen")
      search_fields=("nombre",)
      list_filter=("nombre",)
 
@@ -21,38 +40,28 @@ class EstadosAdmin(admin.ModelAdmin):
      search_fields=("descripcion",)
      list_filter=("descripcion",)
 
-class TipoTarjetasAdmin(admin.ModelAdmin):
-     list_display=("tipoTarID","descripcion")
-     search_fields=("descripcion",)
-     list_filter=("descripcion",)
-
-class MetodoPagosAdmin(admin.ModelAdmin):
-     list_display=("metodoID","descripcion")
-     search_fields=("descripcion",)
-     list_filter=("descripcion",)
-
 class InventariosAdmin(admin.ModelAdmin):
      list_display=("inventarioID","fecha","descripcion")
      search_fields=("fecha",)
      list_filter=("fecha",)
 
 class ProductosAdmin(admin.ModelAdmin):
-     list_display=("codigoPro","nombre","precio","precioMayor","stock","descripcion","talla","tipoProID","marcaID")
+     list_display=("codigoPro","nombre","precio","precioMayor","stock","descripcion","talla","tipoProID","marcaID","estiloID","dimensionID","colorID","imagen")
      search_fields=("nombre","talla")
      list_filter=("nombre","talla")
 
 class ClientesAdmin(admin.ModelAdmin):
-     list_display=("codigoCli","nombres","apellidos","email","password","nomUsuario","direccion","telefono","sexo","fechaNacimiento","numeroDocumento","tipoDocID")
+     list_display=("codigoCli","nombres","apellidos","email","password","nomUsuario","direccion","telefono","sexo","fechaNacimiento","numeroDocumento","tipoDocID","foto")
      search_fields=("nombres","numeroDocumento")
      list_filter=("nombres","numeroDocumento")
 
 class TarjetasAdmin(admin.ModelAdmin):
-     list_display=("tarjetaID","numeroTarjeta","cvv","mmaa","codigoCli","tipoTarID")
-     search_fields=("codigoCli","tipoTarID")
-     list_filter=("codigoCli","tipoTarID")
+     list_display=("tarjetaID","numeroTarjeta","cvv","mmaa","codigoCli")
+     search_fields=("codigoCli",)
+     list_filter=("codigoCli",)
 
 class VentasAdmin(admin.ModelAdmin):
-     list_display=("ventaID","fecha","hora","monto","igv","descuento","tarjetaID","metodoID")
+     list_display=("ventaID","fecha","hora","monto","igv","descuento","tarjetaID")
      search_fields=("fecha",)
      list_filter=("fecha",)
 
@@ -66,12 +75,14 @@ class DetalleInventariosAdmin(admin.ModelAdmin):
      search_fields=("codigoPro","inventarioID")
      list_filter=("codigoPro","inventarioID")
 
+
+admin.site.register(Estilo, EstilosAdmin)
+admin.site.register(Color, ColoresAdmin)
+admin.site.register(Dimension, DimensionesAdmin)
 admin.site.register(TipoProducto,TipoProductosAdmin)
 admin.site.register(Marca,MarcasAdmin)
 admin.site.register(TipoDocumento, TipoDocumentosAdmin)
 admin.site.register(Estado, EstadosAdmin)
-admin.site.register(TipoTarjeta, TipoTarjetasAdmin)
-admin.site.register(MetodoPago, MetodoPagosAdmin)
 admin.site.register(Inventario, InventariosAdmin)
 admin.site.register(Producto, ProductosAdmin)
 admin.site.register(Cliente, ClientesAdmin)
