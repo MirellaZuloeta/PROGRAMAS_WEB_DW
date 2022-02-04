@@ -1,0 +1,535 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="">
+     <meta name="author" content="">
+     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+
+     <title>CYBER-SIXTEEN</title>
+
+     <!-- Bootstrap core CSS -->
+     <link href='{% static "../static/css/bootstrap.min.css" %}' rel="stylesheet">
+<link rel="icon" href='{% static "../static/images/favicon.ico" %}' type=" image/x-icon" />
+
+     <!-- Additional CSS Files -->
+     <link rel="stylesheet" href='{% static "../static/css/fontawesome.css" %}'>
+     <link rel="stylesheet" href='{% static "../static/css/templatemo-sixteen.css" %}'>
+     <link rel="stylesheet" href='{% static "../static/css/owl.css" %}'>
+     <link rel="stylesheet" href='{% static "../static/css/style.css" %}'>
+
+</head>
+
+<body>
+
+     <!-- ***** Preloader Start ***** -->
+     <div id="preloader">
+          <div class="jumper">
+               <div></div>
+               <div></div>
+               <div></div>
+          </div>
+     </div>
+     <!-- ***** Preloader End ***** -->
+
+
+     <header id="fondo">
+
+          <div class="container" href="#">
+               &nbsp;
+
+               <div class="row">
+                    <div class="col-auto mr-auto">
+                         <form class="d-flex">
+
+                              <span class="input-group-text" id="basic-addon1">
+                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkColor"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                   </svg>
+                              </span>&nbsp;&nbsp;
+                              <input type="text" class="form-control" placeholder="Buscar" aria-label="Search"
+                                   aria-describedby="basic-addon1">
+                         </form>
+                    </div>
+
+                    <div class="col-auto mr-auto">
+                    <a href="{% url 'index' %}"><img src='{% static "../static/images/logo.png" %}'alt=""></a>
+                    </div>
+                    <div class="col-auto ">
+                         <div class="container">
+                              <div class="row align-items-right">
+                         <div class="col"><a href="{% url 'ubicacion' %}"><i class=" fa fa-map-marker" aria-hidden="true"></i></a>
+                         </div>
+                                   &nbsp;&nbsp;
+                              {% if request.user.is_authenticated %}
+                              <div class="col"><a href="{% url 'cambiar_perfil' %}"><i class="fa fa-user-o" aria-hidden="true"></i> </a>
+                              </div>
+                              {% else %}
+                              <div class="col"><a href="{% url 'ingresar' %}"><i class="fa fa-user-o" aria-hidden="true"></i> </a>
+                              </div>
+                              {% endif %}
+                                   &nbsp;&nbsp;
+                                   <div class="col"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+
+
+
+<nav class="navbar navbar-expand-lg " id="fondo">
+     <div class="container-fluid">
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+               <ul class="navbar-nav">
+
+                    <li class=" nav-item">
+
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'index' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active " aria-current="page" href="{% url 'index' %}" id="itemA">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="HOME"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active " aria-current="page" href="{% url 'index' %}" id="itemA">HOME</a>
+                         {% endif %}
+
+
+                    </li>
+                    <form action="{% url 'producto' %}" method="get">
+                         <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="1" name="dato1">
+                                        <input type="submit" name="filtro1" value="Sandalias"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="2" name="dato2">
+                                        <input type="submit" name="filtro2" value="Botines"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="3" name="dato3">
+                                        <input type="submit" name="filtro3" value="Ballerinas"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="4" name="dato4">
+                                        <input type="submit" name="filtro4" value="Zapatillas"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="5" name="dato5">
+                                        <input type="submit" name="filtro5" value="Zapatos de Vestir"
+                                             style="background-color: transparent; border: none;"> </a>
+                              </div>
+                         </li>
+                    </form>
+
+                    <li class="nav-item">
+
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'about' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active" aria-current="page" href="{% url 'about' %}" id="items">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="ABOUT"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active" aria-current="page" href="{% url 'about' %}" id="items">ABOUT</a>
+                         {% endif %}
+                    </li>
+                    <li class="nav-item">
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'contacto' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}" id="items">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="CONTACTANOS"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}"
+                              id="items">CONTACTANOS</a>
+                         {% endif %}
+                    </li>
+                    <li class="nav-item">
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'cyber' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active" aria-current="page" href="{% url 'cyber' %}" id="items">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="CYBER"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active" aria-current="page" href="{% url 'cyber' %}"
+                              id="items">PRODUCTOS</a>
+                         {% endif %}
+                    </li>
+
+               </ul>
+
+          </div>
+     </div>
+</nav>
+
+
+          <div aria-label="breadcrumb">
+               <ol class="breadcrumb"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="breadcrumb-item" id="activo"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="breadcrumb-item" id="activo"><a href="{% url 'cyber' %}">Cyber</a></li>
+                    <li class="breadcrumb-item active " id="activo" aria-current="page">{{object.nombre}}</li>
+
+               </ol>
+          </div>
+
+     </header>
+     <br><br><br><br><br>
+
+
+     <!-- <div id="fondoTA">
+          <img src="/PAGINA/PAGINA OFICIAL/assets/images/CYBER.jpg" alt="">
+     </div>-->
+
+
+     <!-- Page Content -->
+     <div class="page-heading products-heading header-text">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="text-content">
+                              <h4>CYBER</h4>
+                              <h2>Sixteen Shoes</h2>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+
+
+     <br><br>
+
+
+
+     <div class="container">
+          <div class="row">
+               <div class="col-sm-5 col-md-6">
+                    <img src="{{producto.imagen.url}}" class="card-img-top" alt="..." width="50" height="50">
+               </div>
+
+               <div class="col-sm-5 col-md-6">
+                    <br>
+                    <div class="informacionproducto">
+                         <div class="row">
+                              <div class="col order-first">
+                                   <p class="h6" id="ejemplo"><strong>PRODUCTO: &nbsp;&nbsp;{{object.nombre}}</strong></p>
+                                   <br>
+                                   <p class="h6" id="ejemplo">
+                                        <strong>TIPO: &nbsp;&nbsp;{{object.tipoProID}}</strong>
+                                   </p>
+                                   <hr>
+                                   <br>
+                                   <p class="h6" id="idproducto">Codigo Producto: {{object.codigoPro}}</p>
+                                   <hr>
+                                   <br>
+                                   <p class="card-text" id="marcazapato">MARCA: &nbsp;&nbsp;{{object.marcaID}}</p>
+                                   <br>
+                                   <p class="card-text">
+                                        Precio:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        S/. {{object.precio}}</p>
+                                   <hr>
+                                   <br>
+                                   <p class="card-text">Precio por mayor:&nbsp; S/. {{object.precioMayor}}</p>
+                                   <hr>
+                                   <br>
+                                   <p class="card-text">
+                                        Talla:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{object.talla}}
+                                   </p>
+                                   <hr>
+                                   <br>
+                                   <form method="post" action="{% url 'aniadir_carrito' %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="producto" value="{{object.pk}}">
+                                        <input type="hidden" name="usuario" value="{{request.user.pk}}">
+                                        <input type="hidden" name="precio" value="{{object.precio}}">
+                                        <center>
+                                             <button><a class="filled-button" style="color: white;">Añadir
+                                                       Carrito</a></button>
+                                        </center>
+                                   </form>
+
+
+                                   <br>
+                                   <br>
+                                   <p class="card-text" id="descripcionzapato"><strong>DESCRIPCIÓN</strong></p>
+                                   <br>
+                                   <p class="card-text"><strong>{{object.descripcion}}</strong></p>
+                                   <hr>
+                                   <br>
+                                   <p class="card-text" id="descripcionzapato"><strong>DETALLE</strong></p><br>
+                                   <p class="card-text">
+                                        <strong>Estilo: </strong> {{object.estiloID}}<br>
+                                        <strong>Color: </strong> {{object.colorID}}<br>
+                                        <strong>Dimension: </strong> {{object.dimensionID}}<br>
+                                   </p>
+                                   <hr>
+                                   <br>
+                              </div>
+
+                         </div>
+
+                    </div>
+               </div>
+          </div>
+
+
+     </div>
+
+     </div>
+
+
+     <br>
+
+     <div class="container">
+          <div class="card">
+               {% for comentario in object.producto_comentarios.all %}
+               <li class="card-body">
+                    <h3>Mensaje</h3>
+                    <p>
+                         {{comentario.comentario}}
+                         <br>
+                         {{comentario.usuario}} - {{comentario.fecha}}
+                    </p>
+               </li>
+               {% endfor %}
+
+
+          </div> <br><br>
+
+
+          <div class="card">
+               <form class="card-body" method="post" action="{% url 'crear_comentario' %}">
+                    {% csrf_token%}
+                    <div class="mb-3">
+
+                         <input type="text" class="form-control" placeholder="Usuario" name="usuario">
+
+                    </div>
+
+                    <input type="hidden" name="codigoPro" value="{{object.pk}}">
+                    <div class="mb-3">
+
+                         <input type="text" class="form-control" placeholder="Comentario" name="comentario">
+                    </div>
+                    <center>
+                         <!-- <a href="index.html" class="filled-button">Comentar</a> -->
+                         <button><a class="filled-button" style="color: white;">Comentar
+                                 </a></button>
+                    </center>
+               </form>
+          </div>
+     </div>
+
+
+     <div class="call-to-action">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="inner-content">
+                              <div class="row">
+                                   <div class="col-md-8">
+                                        <h4>Creativos &amp; Únicos <em>Sixteen</em> Clothes</h4>
+                                        <p>Aproveche las ofertas de esta temporada, corra y escoja sus productos antes
+                                             que se agoten.
+                                        </p>
+                                   </div>
+                                   <div class="col-md-4">
+                              {% if request.user.is_authenticated %}
+                              <a href="{% url 'listar_carrito' %}" class="filled-button">Comprar Ahora</a>
+                              {% else %}
+                              <a href="{% url 'ingresar' %}" class="filled-button">Comprar Ahora</a>
+                              {% endif %}
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+
+
+     <section>
+
+
+          <br><br><br><br>
+          <div class="card-group">
+               <div class="card">
+
+                    <div class="card-body" id="siguenos">
+                         <h2 class="card-title">Siguenos en Todas Nuestras Plataformas Digitales</h2>
+                         <p class="card-text"><i class="fab fa-youtube" id="icons"></i>
+                              <i class="fab fa-facebook-f" id="icons"></i>
+                              <i class="fab fa-instagram" id="icons"></i>
+
+                         </p>
+                    </div>
+
+               </div>
+
+               <div class="card">
+
+                    <div class="card-body"><br>
+                         <center>
+                              <button type="button" class="btn btn-dark">Contáctanos</button>
+                         </center>
+                    </div>
+
+               </div>
+          </div>
+          </div>
+
+
+     </section>
+
+
+
+
+
+     <footer class="text-white text-center text-lg-start bg-dark">
+          <!-- Grid container -->
+          <div class="container p-4">
+
+               <!--Grid row-->
+               <div class="row mt-4">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4" style="color: white;">Nuestra Compañia</h5>
+
+
+
+                         <p id="fut">
+                              Sixteen Clothes siempre disponible al alcanze de un click, compra ahora antes que las
+                              ofertas
+                              se esfumen, vamos compra ya! No te arrepientas en el futuro, esta es tu gran oportunidad!
+                         </p>
+
+                         <div class="mt-4">
+                              <!-- Facebook -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-facebook-f"></i></a>
+                              <!-- Dribbble -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-dribbble"></i></a>
+                              <!-- Twitter -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-twitter"></i></a>
+                              <!-- Google + -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-google-plus-g"></i></a>
+                              <!-- Linkedin -->
+                         </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4 pb-1" style="color: white;">contactanos</h5>
+
+
+                         <ul class="fa-ul" style="margin-left: 1.65em;">
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fa fa-map-marker"></i></span><span class="ms-2">Warsaw,
+                                        00-967,
+                                        Poland</span>
+                              </li>
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                                        class="ms-2">Sixteenclothes@gmail.com</span>
+                              </li>
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+51 987 654
+                                        321</span>
+                              </li>
+                         </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4" style="color: white;">Horarios de Atención</h5>
+
+                         <table class="table text-center text-white">
+                              <tbody class="fw-normal">
+                                   <tr>
+                                        <td>Mon - Thu:</td>
+                                        <td>8am - 9pm</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Fri - Sat:</td>
+                                        <td>8am - 1am</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Sunday:</td>
+                                        <td>9am - 10pm</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+                    <!--Grid column-->
+               </div>
+               <!--Grid row-->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+               © 2021 Copyright:
+               <a class="text-white" href="https://mdbootstrap.com/">SixteenShoes.com</a>
+          </div>
+          <!-- Copyright -->
+     </footer>
+
+
+
+
+     <!-- Bootstrap core JavaScript -->
+     <!-- Bootstrap core JavaScript -->
+     <script src="{% static '../static/js/jquery.min.js' %}"></script>
+     <script src="{% static '../static/js/bootstrap.bundle.min.js' %}"></script>
+
+
+     <!-- Additional Scripts -->
+     <script src="{% static '../static/js/custom.js' %}"></script>
+     <script src="{% static '../static/js/owl.js' %}"></script>
+     <script src="{% static '../static/js/slick.js' %}"></script>
+     <script src="{% static '../static/js/isotope.js' %}"></script>
+     <script src="{% static '../static/js/accordions.js' %}"></script>
+     <script src="{% static '../static/js/scrollreveal.min.js' %}"></script>
+
+     <script src="{% static '../static/js/precio.js' %}"></script>
+
+     <script language="text/Javascript">
+          cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+          function clearField(t) {                   //declaring the array outside of the
+               if (!cleared[t.id]) {                      // function makes it static and global
+                    cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                    t.value = '';         // with more chance of typos
+                    t.style.color = '#fff';
+               }
+          }
+     </script>
+
+     <script src="https://kit.fontawesome.com/8d33823b53.js" crossorigin="anonymous"></script>
+
+</html>

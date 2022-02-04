@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Plnatilla DJango</title>
+</head>
+<body>
+	<h1>{{nombre_universidad}}</h1>
+	<p> Fecha y hora: <span>{{fechahora}}</span>
+
+<div>
+	<h3>Datos de la Persona</h3>
+	<div>Nombres: <label>{{nombre_persona}}</label></div>
+	<div>Apellidos: <label>{{apellido_persona}}</label></div>
+
+	<div>
+		<h3>Cursos</h3>
+		<div>
+			<ul>
+				{% for item in cursos %}
+					<li>{{item}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario</title>
+</head>
+<body>
+	<form action="/buscar/" method="get">
+		<input type="text" name="dato" value="" placeholder="qué buscas?">
+		<input type="submit" value="Enviar">
+	</form>
+
+<div class="container">
+	Artículo buscado: {{articulo}}
+
+	{% if articulos %}
+		<h2>{{articulos|length}} artículos encontrados</h2>
+		<ul>
+		{% for item in articulos %}
+			<li>{{item.nombre}}</li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+</div>
+
+</body>
+</html>

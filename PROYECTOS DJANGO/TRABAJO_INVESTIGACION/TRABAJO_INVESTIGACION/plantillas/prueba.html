@@ -1,0 +1,52 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voz a Texto</title>
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'>
+    <link rel="icon" type="image/png" href='{% static "images/rec.png" %}'>
+
+</head>
+
+<body>
+    <header>
+        <a href=""> <img class="home" src="{% static 'images/home.svg' %}" alt="home"></a>
+    </header>
+    <div class="console">
+        <div class="div-title">
+            <img src="{% static 'images/music.svg' %}" alt="music" class="music">
+            <h1 class="title">Convertidor de Voz a Texto</h1>
+        </div>
+
+        <form action="/saluda/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="stopwatch"></div>
+            <div class="reset">
+                <a href=""> <img class="reset" src="{% static 'images/reset.svg' %}" alt="home"></a>
+            </div>
+
+            <button class="rec">Rec</button>
+            <button class="stop">Stop</button><br>
+
+
+            <input type="submit" value="Hablar" name="envia" id="circulo1">
+            <input type="submit" value="Conversar" name="alexa" id="circulo2"><br>
+
+            <h1>{{valor}}</h1>
+
+            {%for item in voz%}
+            <h3>{{item}}</h3>
+            {%endfor%}
+    </div>
+
+    </form>
+
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

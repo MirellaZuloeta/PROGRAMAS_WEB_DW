@@ -1,0 +1,218 @@
+
+
+
+{% block contenido %}
+
+
+{% endblock contenido %}
+
+
+
+     <section>
+          <br><br><br>
+          <div class="card-group">
+               <div class="card">
+
+                    <div class="card-body" id="siguenos">
+                         <h2 class="card-title">Siguenos en Todas Nuestras Plataformas Digitales</h2>
+                         <p class="card-text"><i class="fab fa-youtube" id="icons"></i>
+                              <i class="fab fa-facebook-f" id="icons"></i>
+                              <i class="fab fa-instagram" id="icons"></i>
+
+                         </p>
+                    </div>
+
+               </div>
+
+               <div class="card">
+
+                    <div class="card-body"><br>
+                         <center>
+                                   {% if request.user.is_authenticated %}
+                                   <form action="{% url 'contacto' %}" method="get">
+                                        <input type="hidden" name="usuario" value="{{request.user.id}}">
+                                        <a href="{% url 'contacto' %}" class="filled-button">
+                                             <input type="submit" name="carrito" style="background-color: transparent;border: none; color: white;"
+                                                  value="Contáctanos"></a>
+                                   </form>
+                                   {% else %}
+                         <a href="{% url 'contacto' %}" class="filled-button">Contáctanos</a>
+                                   {% endif %}
+                    
+                         </center>
+                    </div>
+
+               </div>
+          </div>
+          </div>
+
+
+     </section>
+
+     <!-- Remove the container if you want to extend the Footer to full width. -->
+
+     <footer class="text-white text-center text-lg-start bg-dark">
+          <!-- Grid container -->
+          <div class="container p-4">
+
+               <!--Grid row-->
+               <div class="row mt-4">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4" style="color: white;">Nuestra Compañia</h5>
+
+
+
+                         <p id="fut">
+                              Sixteen Clothes siempre disponible al alcanze de un click, compra ahora antes que las
+                              ofertas
+                              se esfumen, vamos compra ya! No te arrepientas en el futuro, esta es tu gran oportunidad!
+                         </p>
+
+                         <div class="mt-4">
+                              <!-- Facebook -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-facebook-f"></i></a>
+                              <!-- Dribbble -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-dribbble"></i></a>
+                              <!-- Twitter -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-twitter"></i></a>
+                              <!-- Google + -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-google-plus-g"></i></a>
+                              <!-- Linkedin -->
+                         </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4 pb-1" style="color: white;">CONTACTANOS</h5>
+<br>
+     
+
+                         <ul class="fa-ul" style="margin-left: 1.65em;">
+                              <li class="mb-3">
+                                   <span class="fa-li"><a href="{% url 'ubicacion' %}"><i class="fa fa-map-marker"
+                                                  style="color: white;"></i></a></span><span class="ms-2">Warsaw,
+                                        00-967,
+                                        Poland
+
+
+                                   </span>
+                              </li>
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                                        class="ms-2">Sixteenclothes@gmail.com</span>
+                              </li>
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+51 987 654
+                                        321</span>
+                              </li>
+                         </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4" style="color: white;">Horarios de Atención</h5>
+
+                         <table class="table text-center text-white">
+                              <tbody class="fw-normal">
+                                   <tr>
+                                        <td>Mon - Thu:</td>
+                                        <td>8am - 9pm</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Fri - Sat:</td>
+                                        <td>8am - 1am</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Sunday:</td>
+                                        <td>9am - 10pm</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+                    <!--Grid column-->
+               </div>
+               <!--Grid row-->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+               © 2021 Copyright:
+               <a class="text-white" href="https://mdbootstrap.com/">SixteenShoes.com</a>
+
+          </div>
+          <!-- Copyright -->
+     </footer>
+
+
+     <!-- End of .container -->
+
+     <!-- Bootstrap core JavaScript -->
+     <script src="../static/js/jquery.min.js"></script>
+     <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+     <!-- Additional Scripts -->
+     <script src="../static/js/custom.js"></script>
+     <script src="../static/js/owl.js"></script>
+     <script src="../static/js/slick.js"></script>
+     <script src="../static/js/isotope.js"></script>
+     <script src="../static/js/accordions.js"></script>
+     <script src="../static/js/scrollreveal.min.js"></script>
+
+
+     <script src="../static/js/precio.js"></script>
+     <script src="../static/js/pushbar.min.js"></script>
+
+
+
+
+     <script language="text/Javascript">
+          cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+          function clearField(t) {                   //declaring the array outside of the
+               if (!cleared[t.id]) {                      // function makes it static and global
+                    cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                    t.value = '';         // with more chance of typos
+                    t.style.color = '#fff';
+               }
+          }
+     </script>
+
+     <script type="text/javascript">
+          const pushbar = new Pushbar({
+               blur: true,
+               overlay: true,
+          });
+
+          //open a pushbar
+          pushbar.open('mypushbar1');
+          //close all pushbars
+          pushbar.close();
+     </script>
+
+
+
+     <!-- JavaScript Libraries -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+     <script src="../static/js/slick.js"></script>
+     <script src="../static/lib/isotope/isotope.pkgd.min.js"></script>
+     <script src="../static/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+     <!-- Template Javascript -->
+     <script src="../static/js/main.js"></script>
+     <script src="../static/js/jquery.js"></script>
+     <script src="https://kit.fontawesome.com/8d33823b53.js" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

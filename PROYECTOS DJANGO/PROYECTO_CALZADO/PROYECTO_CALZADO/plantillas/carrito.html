@@ -1,0 +1,969 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="">
+     <meta name="author" content="">
+     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+
+     <title>Sixteen Shoes</title>
+     <!-- Bootstrap core CSS -->
+     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+     <link rel="icon" href="../static/images/favicon.ico" type=" image/x-icon" />
+
+     <!-- Additional CSS Files -->
+     <link rel="stylesheet" href="../static/css/fontawesome.css">
+     <link rel="stylesheet" href="../static/css/templatemo-sixteen.css">
+     <link rel="stylesheet" href="../static/css/owl.css">
+     <link rel="stylesheet" href="../static/css/style.css">
+     <link rel="stylesheet" href="../static/css/slider.css">
+
+     <link rel="stylesheet" href="../static/css/pushbar.min.css">
+
+     <!-- CSS Libraries -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+     <link href="../static/lib/slick/slick.css" rel="stylesheet">
+     <link href="../static/lib/slick/slick-theme.css" rel="stylesheet">
+     <link href="../static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+     <!-- ***** Preloader Start ***** -->
+     <div id="preloader">
+          <div class="jumper">
+               <div></div>
+               <div></div>
+               <div></div>
+          </div>
+     </div>
+     <!-- ***** Preloader End ***** -->
+
+
+     <header id="fondo">
+          <div class="container" href="#">
+               &nbsp;
+
+               <div class="row">
+                    <div class="col-auto mr-auto">
+                         <form action="{% url 'buscar' %}" method="get" class="d-flex">
+
+                              <button type="submit" style="background-color: transparent;"><i class="fa fa-search"
+                                        aria-hidden="true"></i></button>
+                              &nbsp;&nbsp;
+                              <input name="nombre" type="text" class="form-control" placeholder="Buscar"
+                                   aria-label="Search" aria-describedby="basic-addon1">
+
+
+                         </form>
+                    </div>
+
+                    <div class="col-auto mr-auto">
+                         <a href="{% url 'index' %}"><img src="../static/images/logo.png" alt=""></a>
+                    </div>
+                    <div class="col-auto ">
+                         <div class="container">
+                              <div class="row align-items-right">
+
+                                   {% if request.user.is_authenticated %}
+                                   <li><a href="{% url 'salir' %}">Salir</a>
+                                   </li>
+                                   {% else %}
+                                   <li><a href="{% url 'ingresar' %}">Ingresar</a></li>
+                                   {% endif %}
+
+                              {% if request.user.is_authenticated %}
+                              <div class="col"><a href="{% url 'cambiar_perfil' %}"><i class="fa fa-user-o" aria-hidden="true"></i> </a>
+                              </div>
+                              {% else %}
+                              <div class="col"><a href="{% url 'ingresar' %}"><i class="fa fa-user-o" aria-hidden="true"></i> </a>
+                              </div>
+                              {% endif %}
+
+                                   <div class="col"><a href="{% url 'ubicacion' %}"><i class=" fa fa-map-marker"
+                                                  aria-hidden="true"></i></a>
+                                   </div>
+
+                    &nbsp;&nbsp;
+                    
+                    <div data-pushbar-id="mypushbar1" data-pushbar-direction="right" class="pushy">
+                    
+                         <div class="encabezado">
+                    
+                              <div>
+                                   <i class="fa fa-shopping-bag" aria-hidden="true" width="16" height="16"></i>
+                              </div>
+                    
+                    
+                              <div>
+                                   TU CARRITO DE COMPRAS
+                              </div>
+                              <div class="cerrar">
+                                   <span data-pushbar-close class="close push_left"></span>
+                              </div>
+                         </div>
+                    
+                         <div class="body-PUSHBAR">
+                              {% if carritos %}
+                              <div class="cardsProductos">
+                    
+                    
+                                   {% for carrito in carritos %}
+                    
+                                   <div class="cardProducto">
+                                        <div class="imagen-card">
+                                             <img src="{{carrito.producto.imagen.url}}" alt="">
+                                        </div>
+                                        <div class="detalles-card">
+                                             <div class="remove">
+                    
+                    
+                    
+                                             </div>
+                                             <div class="title-detalles">
+                                                  <h4>{{carrito.producto}}</h4>
+                                             </div>
+                                             <div class="details">
+                                                  <div><br>
+                                                       <p>{{carrito.precio}}</p>
+                                                  </div>
+                                                  <div><br>
+                                                       <p>
+                                                            Color:
+                                                            <span>{{carrito.producto.colorID}}</span>
+                                                       </p>
+                                                  </div>
+                    
+                                             </div>
+                                        </div>
+                                   </div>
+                    
+                                   {% endfor %}
+                                   <div class="foot-push">
+                                        <div class="subtotal">
+                                             <p>Subtotal:
+                                                  <span class="cantidad-productos">{{carritos|length}} Productos</span>
+                                             </p>
+                                             <div style="margin-right: 15px; color: orangered;" id="total"> {{precio}}</div>
+                                        </div>
+                                        <a href="{% url 'listar_carrito' %}" class="btn-foot btn-black">COMPRAR AHORA</a>
+                                   </div>
+                              </div>
+                              {% endif %}
+                         </div>
+                    </div>
+                                   {% if request.user.is_authenticated %}
+                                   <div class=" col pushbar_main_content"><button style="background-color: white;"
+                                             data-pushbar-target="mypushbar1"><i class="fa fa-shopping-bag"
+                                                  aria-hidden="true" width="16" height="16"></i></button>
+                                   </div>
+                                   {% endif %}
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+<nav class="navbar navbar-expand-lg " id="fondo">
+     <div class="container-fluid">
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+               <ul class="navbar-nav">
+
+                    <li class=" nav-item">
+
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'index' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active " aria-current="page" href="{% url 'index' %}" id="itemA">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="HOME"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active " aria-current="page" href="{% url 'index' %}" id="itemA">HOME</a>
+                         {% endif %}
+
+
+                    </li>
+
+                    <form action="{% url 'carrito' %}" method="get">
+                         <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="1" name="dato1">
+                                        <input type="submit" name="filtro1" value="Sandalias"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="2" name="dato2">
+                                        <input type="submit" name="filtro2" value="Botines"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="3" name="dato3">
+                                        <input type="submit" name="filtro3" value="Ballerinas"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="4" name="dato4">
+                                        <input type="submit" name="filtro4" value="Zapatillas"
+                                             style="background-color: transparent; border: none;"> </a>
+                                   <a class="dropdown-item" href="#">
+                                        <input type="hidden" value="5" name="dato5">
+                                        <input type="submit" name="filtro5" value="Zapatos de Vestir"
+                                             style="background-color: transparent; border: none;"> </a>
+                              </div>
+                         </li>
+                    </form>
+
+                    
+
+                    <li class="nav-item">
+
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'about' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active" aria-current="page" href="{% url 'about' %}" id="items">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="ABOUT"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active" aria-current="page" href="{% url 'about' %}" id="items">ABOUT</a>
+                         {% endif %}
+                    </li>
+                    <li class="nav-item">
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'contacto' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}" id="items">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="CONTACTANOS"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}"
+                              id="items">CONTACTANOS</a>
+                         {% endif %}
+                    </li>
+                    <li class="nav-item">
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'cyber' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a class="nav-link active" aria-current="page" href="{% url 'cyber' %}" id="items">
+                                   <input type="submit" name="carrito" style="background-color: white; border: none;"
+                                        value="CYBER"></a>
+                         </form>
+                         {% else %}
+                         <a class="nav-link active" aria-current="page" href="{% url 'cyber' %}" id="items">PRODUCTOS</a>
+                         {% endif %}
+                    </li>
+
+               </ul>
+
+          </div>
+     </div>
+</nav>
+
+          <div aria-label="breadcrumb">
+               <ol class="breadcrumb"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <li class="breadcrumb-item" id="activo"><a href="{% url 'index' %}" ">Home</a></li>
+
+                    <li class="breadcrumb-item active " id="activo" aria-current="page">Carrito Compras</li>
+
+               </ol>
+          </div>
+
+     </header>
+     <br><br><br><br><br>
+
+
+
+     <!-- Page Content -->
+     <div class="page-heading products-heading header-text">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="text-content">
+                              <h4>CYBER</h4>
+                              <h2>sixteen shoes</h2>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+<br><br>
+
+
+
+     <div class="container" style="text-align: center;">
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="tab col s4">
+               <button class="nav-link active col-12"  data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" 
+               aria-controls="home" 
+                    ><a {% if tab == 'sincomprar' %} class="active" href="#carrito-{{tab}}" {% else %} href="#carrito" {% endif %}
+                         onclick="location.href='{% url 'listar_carrito' %}'" >Mi carrito de compras</a></button>                 
+                </li>
+                     
+          <li class="tab col s4"><button class="nav-link active col-12" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home"><a {% if tab == 'paso02' %} class="active" href="#carrito-{{tab}}" {% else
+                         %} href="#carrito" {% endif %} onclick="location.href='{% url 'paso02' %}'">Informacion Cliente
+                    </a></button></li>
+
+                         <li class="tab col s4"><button class="nav-link active col-12" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                                   role="tab" aria-controls="home"><a {% if tab == 'paso03' %} class="active" href="#carrito-{{tab}}" {% else
+                                        %} href="#carrito" {% endif %} onclick="location.href='{% url 'paso03' %}'">Finalizar Pago
+                                        </a></button></li>
+          
+          <li class="tab col s4"><button class="nav-link active col-12" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+               aria-controls="home"><a {% if tab == 'finalizadas' %} class="active" href="#carrito-{{tab}}" {% else %} href="#carrito"
+                    {% endif %} onclick="location.href='{% url 'listar_finalizado' %}'">Mis Compras Finalizadas</a></button></li>
+
+          </ul>
+     </div>
+
+
+<br><br>
+
+
+{% if tab == 'sincomprar' %}
+<div class="container" id="carrito-{{tab}}">       
+               <li>
+                    <div class="card-header">
+                         <center>
+                                   {% if tab == 'sincomprar' %}
+                                   <h1>Mi Carrito de Compras</h1>
+                                   <h1 id="total">Total S/10.00</h1>
+                                   {% endif %}
+                        
+                                   {% if tab == 'finalizadas' %}
+                                   <h1>Mi Carrito Finalizadas</h1>                                       
+                                   {% endif %}
+                         </center>
+                    </div>
+               </li>
+         
+     <br>
+
+     <table class="table">
+          <thead>
+               <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col"></th>
+                    <th scope="col">Dimension</th>
+                    <th scope="col">SubTotal</th>
+                    <th scope="col"></th>
+               </tr>
+          </thead>
+          <tbody>
+               <input type="hidden" name="usuario" value="{{request.user.id}}">              
+               {% for carrito in object_list %}
+                              <tr id="productocompra">
+                                   <td>
+               <input type="hidden" name="precio" value="{{carrito.precio}}">
+               <input type="hidden" name="producto" value="{{carrito.producto}}">
+                                        &nbsp;&nbsp;&nbsp; <img src="{{carrito.producto.imagen.url}}" alt="" id="imgcarro">
+                    </td>
+                    <td>
+                         <br>
+                         <p>Producto: {{carrito.producto.nombre}} </p>
+                         <p>Marca: {{carrito.producto.marcaID}}</p>
+                      
+                    </td>
+                    <td><br>
+                         <div class="row align-items-center">
+                         <p>Size: #{{carrito.producto.talla}} - {{carrito.producto.dimensionID}} </p>
+                         </div>
+                    </td>
+
+                    <td><br><b>S/ {{carrito.precio}}</b></td>
+                    <td><br>
+                    {% if tab == 'sincomprar' %}
+                    <form method="post" action="{% url 'eliminar_carrito' carrito.pk %}">
+                         {% csrf_token %}
+                         <button type="submit" class="btn btn-secondary"><i class="fas fa-trash-alt"></i>
+                         </button>
+                    </form>
+                    {% endif %}
+                    </td>
+               </tr>
+
+               {% empty %}
+               <li>
+                    <div class="card-header">
+                         <div>
+                              <center>
+                                   No tienes productos en tu carrito
+                              </center>
+                         </div>
+                    </div>
+               </li>
+          {% endfor %}
+
+
+          </tbody>
+     </table>
+
+          {% if tab == 'sincomprar' %}
+               <center>
+               <a {% if tab == 'paso01' %} class="active" href="#carrito-{{tab}}" {% else %} href="#carrito" {% endif %}
+                    onclick="location.href='{% url 'paso02' %}'">Pagar en Sixteen
+               </a></center>
+          {% endif %} 
+</div>
+     {% endif %}
+
+
+
+{% if tab == 'finalizadas' %}
+<div class="container" id="carrito-{{tab}}">
+     <li>
+          <div class="card-header">
+               <center>
+                    {% if tab == 'sincomprar' %}
+                    <h1>Mi Carrito de Compras</h1>
+                    <h1 id="total">Total S/10.00</h1>
+                    {% endif %}
+          
+                    {% if tab == 'finalizadas' %}
+                    <h1>Mi Carrito Finalizadas</h1>
+                    {% endif %}
+               </center>
+          </div>
+     </li>
+
+     <br>
+
+     <table class="table">
+          <thead>
+               <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col"></th>
+                    <th scope="col">Dimension</th>
+                    <th scope="col">SubTotal</th>
+                    <th scope="col"></th>
+               </tr>
+          </thead>
+          <tbody>
+               <input type="hidden" name="usuario" value="{{request.user.id}}">
+               {% for carrito in object_list %}
+               <tr id="productocompra">
+                    <td>
+                         <input type="hidden" name="precio" value="{{carrito.precio}}">
+                         <input type="hidden" name="producto" value="{{carrito.producto}}">
+                         &nbsp;&nbsp;&nbsp; <img src="{{carrito.producto.imagen.url}}" alt="" id="imgcarro">
+                    </td>
+                    <td>
+                         <br>
+                         <p>Producto: {{carrito.producto.nombre}} </p>
+                         <p>Marca: {{carrito.producto.marcaID}}</p>
+
+                    </td>
+                    <td><br>
+                         <div class="row align-items-center">
+                              <p>Size: #{{carrito.producto.talla}} - {{carrito.producto.dimensionID}} </p>
+                         </div>
+                    </td>
+
+                    <td><br><b>S/ {{carrito.precio}}</b></td>
+                    <td><br>
+                         {% if tab == 'sincomprar' %}
+                         <form method="post" action="{% url 'eliminar_carrito' carrito.pk %}">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-secondary"><i class="fas fa-trash-alt"></i>
+                              </button>
+                         </form>
+                         {% endif %}
+                    </td>
+               </tr>
+
+               {% empty %}
+               <li>
+                    <div class="card-header">
+                         <div>
+                              <center>
+                                   No tienes productos en tu carrito
+                              </center>
+                         </div>
+                    </div>
+               </li>
+               {% endfor %}
+
+
+          </tbody>
+     </table>
+</div>
+{% endif %}
+
+
+
+
+
+{% if tab == 'paso02' %}
+<div class="container" id="carrito-{{tab}}">
+<form method="post" action="{% url 'registrarCliente' %}">
+     {% csrf_token %}
+    <div class="container">
+    
+          <div class="row">
+               <div class="col-7" id="cajita">
+                    <br>
+                    <h2>Datos Personales
+                         <br>
+                         <h6>Solicitamos únicamente información para la transacción de la compra</h6>
+                    </h2>
+                    {% if request.user.is_authenticated %}
+                         <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              {% endif %}
+                    <input type="email" id="cajatextogrande" placeholder="Correo" value="{{request.user.email}}" disabled><br><br>
+                    <input type="nombres" id="cajatextochico" placeholder="Nombres" value="{{request.user.first_name}}" disabled>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              
+                    <input type="text" id="cajatextochico" placeholder="Apellidos" value="{{request.user.last_name}}" disabled><br><br>
+                    <input type="text" id="cajatextochico" placeholder="Teléfono" name="telefono">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+                    <input type="" id="cajatextochico" placeholder="Username" value="{{request.user.username}}" disabled><br><br>
+     
+                  <br>
+               <textarea id="cajatextogrande" placeholder="Escribenos un comentario sobre Sixteen Shoes"  name="comentario">
+                    </textarea>
+                    <br><br>
+               </div>
+               &nbsp;
+     
+               <div class="col-4" id="cajita2">   
+                    <br>
+                    <table class="table">
+                         <thead>
+                              <tr>
+                                   <th scope="col"></th>
+                                   <th scope="col">Datos de Tarjeta</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <tr id="productocompra">
+                                   <td>
+     
+                                        &nbsp;&nbsp;&nbsp; <img src="../static/images/high-heels.png" alt="" id="imgDatos">
+                                   </td>
+                                   <td>
+                                        <br>
+                                        <p>@SixteenShoes</p>
+                                   </td>
+                              </tr>
+                              <tr>
+                                   <td> 
+                                        Número :
+                                   </td>
+                                   <td>
+                                   <input type="text" name="numeroTarjeta">
+                                   </td>
+                              </tr>
+     
+                              <tr>
+                                   <td>
+                                        CVV:
+                                   </td>
+                                   <td>
+                                   <input type="text" name="cvv">
+                                   </td>
+                              </tr>     
+                              <tr>
+                                   <td>
+                                        MM/AA:
+                                   </td>
+                                   <td>
+                                   <input type="text" name="mmaa">
+                                   </td>
+                              </tr>
+                         </tbody>
+                    </table>  
+               </div>
+
+               
+          </div>
+     
+     </div>
+
+<br>
+<center>
+     <!--         <a href="index.html" class="filled-button">Sign In</a> -->
+     <button class="btn btn-primary btn-block mb-4 col-4"
+          style="background-color:orangered; border:  orangered;">Registrar y Next</button>
+</center>
+
+
+
+     </form>
+</div>
+{% endif %}
+
+
+
+
+
+
+
+{% if tab == 'paso03' %}
+<div class="container" id="carrito-{{tab}}">
+
+<form method="post" action="{% url 'registrarVenta' %}">
+     {% csrf_token %}
+
+
+<div class="container">
+  
+     <div class="row">
+          <div class="col-7" id="cajita">
+               <br>
+               <h2>Tipo de Despacho
+                    <br>
+                    <h6>Solicitamos únicamente información para transacción de la compra</h6>
+               </h2>
+                    {% if request.user.is_authenticated %}
+                    <input type="hidden" name="usuario" value="{{request.user.id}}">
+                    {% endif %}
+          <input type="distrito" id="cajachica" placeholder="Distrito" name="distrito">
+        
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               &nbsp;
+               <input type="provincia" id="cajachica" placeholder="Provincia" name="provincia">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               &nbsp;
+          <input type="departamento" id="cajachica" placeholder="Departamento" name="departamento"><br><br>
+               <h6>Nota Importante:</h6>
+            
+                  
+                    <input class="form-control" type="text" placeholder="La entrega será hasta 7 días hábiles"
+                         aria-label="Disabled input example" id="textocero" disabled>
+          
+               <br>
+               <h6>Complete su dirección de entrega:</h6>
+               <input type="direccion" id="cajatextogrande" placeholder="Dirección" name="direccionEnvio"><br><br>
+          <input type="direccion" id="cajatextogrande" placeholder="Referencia de Dirección" name="referenciaDireccion"><br><br>
+      
+          </div>
+          &nbsp;
+
+
+          <div class="col-4" id="cajita2">
+
+               <br>
+
+               <table class="table">
+                    <thead>
+                         <tr>
+                              <th scope="col">Resumen de la compra</th>
+                              <th scope="col"></th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <tr id="productocompra">
+                              <td>
+               
+                                   &nbsp;&nbsp;&nbsp; <img src="../static/images/high-heels.png" alt="" id="imgDatos">
+                              </td>
+                              <td>
+                                   <br>
+                                   <p>@SixteenShoes</p>
+                              </td>
+                         </tr>
+               
+                         <tr>
+                              <td>
+               
+                                   SubTotal
+                              </td>
+                              <td>
+                             
+                                   <b id="total"></b>
+                                        <input type="hidden" name="subtotal" value="" id="subtotal">
+                              </td>
+                         </tr>
+               
+                         <tr>
+                              <td>
+                                   Costo de Envio
+                              </td>
+                              <td>
+                              <input type="hidden" name="costoEnvio" value="25" >
+                                   <b >S/ 25.00</b>
+                              </td>
+                         </tr>
+               
+                         <tr>
+                              <td>
+                                   Total
+                              </td>
+                              <td>
+                                   <b id="completo">S/ 45.00</b>
+                                 <input type="hidden" name="total" value="" id="fin">
+                                   
+                              </td>
+                         </tr>
+                    </tbody>
+               </table>
+
+
+          </div>
+     </div>
+
+
+</div>
+
+
+<br><br>
+
+<center>
+     <button class="btn btn-primary btn-block mb-4 col-4"
+          style="background-color:orangered; border:  orangered;" >Finalizar</button>
+</center>
+
+</form>
+</div>
+{% endif %}
+
+
+
+ <br>
+
+
+
+<script>
+     const accordion = document.getElementsByClassName
+          ('contentBx');
+     for (i = 0; i < accordion.length; i++) {
+          accordion[i].addEventListener('click', function () {
+               this.classList.toggle('active')
+          })
+     }
+</script>
+<br>
+<!--FIN EL ARCODEN DE OFERTAS-->
+
+     <section>
+
+
+          <br><br><br><br>
+          <div class="card-group">
+               <div class="card">
+
+                    <div class="card-body" id="siguenos">
+                         <h2 class="card-title">Siguenos en Todas Nuestras Plataformas Digitales</h2>
+                         <p class="card-text"><i class="fab fa-youtube" id="icons"></i>
+                              <i class="fab fa-facebook-f" id="icons"></i>
+                              <i class="fab fa-instagram" id="icons"></i>
+
+                         </p>
+                    </div>
+
+               </div>
+
+               <div class="card">
+
+               <div class="card-body"><br>
+                    <center>
+                         {% if request.user.is_authenticated %}
+                         <form action="{% url 'contacto' %}" method="get">
+                              <input type="hidden" name="usuario" value="{{request.user.id}}">
+                              <a href="{% url 'contacto' %}" class="filled-button">
+                                   <input type="submit" name="carrito"
+                                        style="background-color: transparent;border: none; color: white;" value="Contáctanos"></a>
+                         </form>
+                         {% else %}
+                         <a href="{% url 'contacto' %}" class="filled-button">Contáctanos</a>
+                         {% endif %}            
+                    </center>
+               </div>
+
+               </div>
+          </div>
+          </div>
+
+
+     </section>
+
+
+
+
+
+     <footer class="text-white text-center text-lg-start bg-dark">
+          <!-- Grid container -->
+          <div class="container p-4">
+
+               <!--Grid row-->
+               <div class="row mt-4">
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4" style="color: white;">Nuestra Compañia</h5>
+
+
+
+                         <p id="fut">
+                              Sixteen Clothes siempre disponible al alcanze de un click, compra ahora antes que las
+                              ofertas
+                              se esfumen, vamos compra ya! No te arrepientas en el futuro, esta es tu gran oportunidad!
+                         </p>
+
+                         <div class="mt-4">
+                              <!-- Facebook -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-facebook-f"></i></a>
+                              <!-- Dribbble -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-dribbble"></i></a>
+                              <!-- Twitter -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-twitter"></i></a>
+                              <!-- Google + -->
+                              <a type="button" class="btn btn-floating btn-dark btn-lg"><i
+                                        class="fab fa-google-plus-g"></i></a>
+                              <!-- Linkedin -->
+                         </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4 pb-1" style="color: white;">contactanos</h5>
+
+             
+
+                         <ul class="fa-ul" style="margin-left: 1.65em;">
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fa fa-map-marker"></i></span><span class="ms-2">Warsaw,
+                                        00-967,
+                                        Poland</span>
+                              </li>
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                                        class="ms-2">Sixteenclothes@gmail.com</span>
+                              </li>
+                              <li class="mb-3">
+                                   <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+51 987 654
+                                        321</span>
+                              </li>
+                         </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                         <h5 class="text-uppercase mb-4" style="color: white;">Horarios de Atención</h5>
+
+                         <table class="table text-center text-white">
+                              <tbody class="fw-normal">
+                                   <tr>
+                                        <td>Mon - Thu:</td>
+                                        <td>8am - 9pm</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Fri - Sat:</td>
+                                        <td>8am - 1am</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Sunday:</td>
+                                        <td>9am - 10pm</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+                    <!--Grid column-->
+               </div>
+               <!--Grid row-->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+               © 2021 Copyright:
+               <a class="text-white" href="https://mdbootstrap.com/">SixteenShoes.com</a>
+          </div>
+          <!-- Copyright -->
+     </footer>
+
+
+
+<!-- End of .container -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+
+<!-- Additional Scripts -->
+<script src="../static/js/custom.js"></script>
+<script src="../static/js/owl.js"></script>
+<script src="../static/js/slick.js"></script>
+<script src="../static/js/isotope.js"></script>
+<script src="../static/js/accordions.js"></script>
+<script src="../static/js/scrollreveal.min.js"></script>
+
+
+<script src="../static/js/precio.js"></script>
+<script src="../static/js/pushbar.min.js"></script>
+
+
+     <script language="text/Javascript">
+          cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+          function clearField(t) {                   //declaring the array outside of the
+               if (!cleared[t.id]) {                      // function makes it static and global
+                    cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                    t.value = '';         // with more chance of typos
+                    t.style.color = '#fff';
+               }
+          }
+
+
+
+     </script>
+
+          <script type="text/javascript">
+               const pushbar = new Pushbar({
+                    blur: true,
+                    overlay: true,
+               });
+
+               //open a pushbar
+               pushbar.open('mypushbar1');
+               //close all pushbars
+               pushbar.close();
+          </script>
+
+<script>
+     $(document).ready(function(){
+          var valor=0
+          var completo=0
+          {% for carrito in object_list %}
+          valor= valor+{{carrito.precio}}
+          {% endfor %}
+          completo=valor+25
+          $("#total").html("S/ "+valor+".00")
+          $("#completo").html("S/ " + completo + ".00")
+          document.getElementById('subtotal').value = valor
+          document.getElementById('fin').value = completo
+     });
+</script>
+
+
+     <!-- JavaScript Libraries -->
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+     <script src="../static/js/slick.js"></script>
+     <script src="../static/lib/isotope/isotope.pkgd.min.js"></script>
+     <script src="../static/lib/lightbox/js/lightbox.min.js"></script>
+     
+     
+     
+     <!-- Template Javascript -->
+     <script src="../static/js/main.js"></script>
+     <script src="../static/js/jquery.js"></script>
+     <script src="https://kit.fontawesome.com/8d33823b53.js" crossorigin="anonymous"></script>
+     
+
+     </body>
+     
+     </html>

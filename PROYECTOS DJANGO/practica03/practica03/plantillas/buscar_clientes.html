@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <title>Formulario</title>
+</head>
+
+<body>
+     <form action="/buscarclientes/" method="get">
+          <input type="text" name="dato" value="" placeholder="que buscas?">
+          <input type="submit" value="Enviar">
+     </form>
+
+     <div class="container">
+          Cliente buscado: {{cliente}}
+
+          {% if clientes %}
+          <h2>{{clientes|length}} clientes encontrados</h2>
+          <ul>
+               {% for item in clientes %}
+               <li>{{item.nombres}}</li>
+               {% endfor %}
+          </ul>
+          {% endif %}
+     </div>
+
+</body>
+
+</html>

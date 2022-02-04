@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -26,7 +27,6 @@ SECRET_KEY = 'django-insecure--k2k0t9q9rpcw(knk8c#az$$(2fbtxr6e-r-#ot8j!ipq#jty=
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'PROYECTO_CALZADO.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/USER/OneDrive - Catholic University Santo Toribio de Mogrovejo/Desktop/PROYECTO_CALZADO/PROYECTO_CALZADO/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'PROYECTO_CALZADO.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BD_CALZADO',
+        'NAME': 'BD_PROYECTO',
         'USER': 'postgres',
         'PASSWORD': 'mire2021',
         'HOST': '127.0.0.1',
@@ -115,15 +115,24 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'PROYECTO_CALZADO/static'),'C:/Users/USER/OneDrive - Catholic University Santo Toribio de Mogrovejo/Desktop/PROYECTO_CALZADO/PROYECTO_CALZADO/static',]
 
+
+MEDIA_URL="/media/"
+MEDIA_ROOT=os.path.join(BASE_DIR,'archivos')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STRIPE_PUBLIC_KEY='pk_test_51K1FpHKnd2XdldfVTn3OCS8ThlowtCTlHrvY1uWszdjSB6FEYoFtofQbjegtQbuIHRBo0j3bX5kHGWbV9SeigEcA009vA6xlGg'
+
+STRIPE_PRIVATE_KEY='sk_test_51K1FpHKnd2XdldfVJpAX41Z1snz1jZG2T8MWwecGVIC6FnZnt8ITILolAPJjydDVklHK5LGDxVGQIXvvSGrSKEee00kVvw5oZn'

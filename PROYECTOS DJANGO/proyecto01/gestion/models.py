@@ -20,5 +20,6 @@ class Articulo(models.Model):
   nombre=models.CharField(max_length=50)
   seccion=models.ForeignKey('Seccion', on_delete=models.DO_NOTHING, default=0)
   precio=models.DecimalField(decimal_places=2,max_digits=12)
+  imagen=models.ImageField(upload_to="articulos",null=True)
 
 

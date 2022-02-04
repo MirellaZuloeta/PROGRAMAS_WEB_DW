@@ -6,7 +6,7 @@ class ClientesAdmin(admin.ModelAdmin):
   search_fields=("nombre","email")
 
 class ArticulosAdmin(admin.ModelAdmin):
-     list_display=("nombre","seccion","precio")
+     list_display=("nombre","seccion","precio","imagen")
      search_fields=("nombre","precio")
      list_filter=("seccion",)
 

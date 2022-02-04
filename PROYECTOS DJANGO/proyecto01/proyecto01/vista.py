@@ -1,6 +1,9 @@
 from django.http import HttpResponse
 from django.template import Template, Context
+from django.shortcuts import render
+from gestion.models import Articulo
 from datetime import datetime
+
 def saludo(request):
   return HttpResponse("Mi primera web con DJango")
 
@@ -21,3 +24,7 @@ def uso_plantilla(request):
   documento=templ.render(contx)
   return HttpResponse(documento)
   
+
+def listaarticulos(request):
+    obj_articulos=Articulo.objects.all()
+    return render(request,"lista_articulos.html", {"articulos":obj_articulos})
